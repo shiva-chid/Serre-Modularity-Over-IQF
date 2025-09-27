@@ -1,0 +1,3 @@
+[submodule "picard_curves"]
+	path = picard_curves
+	url = https://github.com/JRSijsling/picard_curves
