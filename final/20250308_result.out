@@ -1,0 +1,369 @@
+Checking for NVIDIA GPU ... none
+Checking for Magma license
+Starting AVX version of Magma
+Magma V2.28-11    Sat Mar  8 2025 21:31:38 on wurc1    [Seed = 2077307588]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "20250308.m"
+Using 6 threads
+Wrote 1025 traces to file temp_2451294
+Processed 1025 primes in 0.029 seconds (0.028 ms/prime) using 0.000 MB (VM peak 0.571 GB)
+y^3=x^4+160x^2-512x+3328:3:3:4:13:-1:1:0.029:1025:0.028:584.461:3908631:1021093:0.507:[0.9,4.5,35.1]
+0.144 MB memory peak usage (of which 0.000 MB is in zz, excluding 16.000 MB fixed overhead)
+
+Using L-polynomials at the (ordinary) primes
+[ 29, 71, 113, 127, 197, 211, 239, 281, 337, 379, 421, 449, 463, 491, 547, 617, 631, 659, 673, 701, 743, 757, 827, 883, 911, 953, 967, 1009, 1051, 1093, 1163, 1289, 1303, 1373, 1429, 1471, 1499, 1583, 1597, 1667, 1709, 1723, 1877, 1933, 2003, 2017, 2087, 2129, 2143, 2213, 2269, 2297, 2311, 2339, 2381, 2423, 2437, 2521, 2549, 2591, 2633, 2647, 2689, 2731, 2801, 2843, 2857, 2927, 2969, 3011, 3067, 3109, 3137, 3221, 3319, 3347, 3361, 3389, 3529, 3557, 3571, 3613, 3697, 3739, 3767, 3823, 3851, 3907, 4019, 4159, 4201, 4229, 4243, 4271, 4327, 4397, 4481, 4523, 4621, 4649, 4663, 4691, 4733, 4789, 4817, 4831, 4943, 4957, 4999, 5153, 5167, 5209, 5237, 5279, 5419, 5503, 5531, 5573, 5657, 5741, 5783, 5839, 5867, 5881, 5923, 6007, 6091, 6133, 6203, 6217, 6287, 6301, 6329, 6343, 6427, 6469, 6553, 6581, 6637, 6679, 6763, 6791, 6833, 6917, 6959, 7001, 7043, 7057, 7127, 7211, 7253, 7309, 7351, 7393, 7477, 7547, 7561, 7589, 7603, 7673, 7687, 7757, 7841, 7883, 8009, 8093, 8191 ]
+
+Orders of the characters generating the Hecke character group:
+[ 6, 6, 6, 6 ]
+Charpol at p=29 has roots [ <3, 2>, <5, 2>, <6, 2> ] over F_7
+29 648
+Charpol at p=71 has roots [ <1, 4>, <6, 2> ] over F_7
+71 648
+Charpol at p=113 has roots [ <6, 6> ] over F_7
+113 216
+Charpol at p=127 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+127 144
+Charpol at p=197 has roots [ <6, 6> ] over F_7
+197 144
+Charpol at p=211 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+211 120
+Charpol at p=239 has roots [ <1, 4>, <6, 2> ] over F_7
+239 120
+Charpol at p=281 has roots [ <3, 2>, <5, 2>, <6, 2> ] over F_7
+281 120
+Charpol at p=337 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+337 84
+Charpol at p=379 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+379 84
+Charpol at p=421 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+421 56
+Charpol at p=449 has roots [ <6, 6> ] over F_7
+449 56
+Charpol at p=463 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+463 44
+Charpol at p=491 has roots [ <1, 4>, <6, 2> ] over F_7
+491 44
+Charpol at p=547 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+547 32
+Charpol at p=617 has roots [ <6, 6> ] over F_7
+617 32
+Charpol at p=631 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+631 32
+Charpol at p=659 has roots [ <1, 4>, <6, 2> ] over F_7
+659 32
+Charpol at p=673 has roots [ <2, 3>, <4, 3> ] over F_7
+673 16
+Charpol at p=701 has roots [ <3, 2>, <5, 2>, <6, 2> ] over F_7
+701 16
+Charpol at p=743 has roots [ <1, 4>, <6, 2> ] over F_7
+743 16
+Charpol at p=757 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+757 8
+Charpol at p=827 has roots [ <1, 4>, <6, 2> ] over F_7
+827 8
+Charpol at p=883 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+883 8
+Charpol at p=911 has roots [ <1, 4>, <6, 2> ] over F_7
+911 8
+Charpol at p=953 has roots [ <6, 6> ] over F_7
+953 8
+Charpol at p=967 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+967 8
+Charpol at p=1009 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+1009 8
+Charpol at p=1051 has roots [ <1, 2>, <6, 4> ] over F_7
+1051 8
+Charpol at p=1093 has roots [ <6, 6> ] over F_7
+1093 4
+Charpol at p=1163 has roots [ <1, 4>, <6, 2> ] over F_7
+1163 4
+Charpol at p=1289 has roots [ <6, 6> ] over F_7
+1289 4
+Charpol at p=1303 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+1303 4
+Charpol at p=1373 has roots [ <6, 6> ] over F_7
+1373 4
+Charpol at p=1429 has roots [ <2, 2>, <4, 2>, <6, 2> ] over F_7
+1429 4
+Charpol at p=1471 has roots [ <1, 4>, <6, 2> ] over F_7
+1471 4
+Charpol at p=1499 has roots [ <1, 4>, <6, 2> ] over F_7
+1499 4
+Charpol at p=1583 has roots [ <1, 4>, <6, 2> ] over F_7
+1583 4
+Charpol at p=1597 has roots [ <2, 1>, <4, 1>, <6, 4> ] over F_7
+1597 4
+Charpol at p=1667 has roots [ <1, 4>, <6, 2> ] over F_7
+1667 4
+Charpol at p=1709 has roots [ <6, 6> ] over F_7
+1709 4
+Charpol at p=1723 has roots [ <1, 4>, <6, 2> ] over F_7
+1723 4
+Charpol at p=1877 has roots [ <6, 6> ] over F_7
+1877 4
+Charpol at p=1933 has roots [ <1, 4>, <3, 1>, <5, 1> ] over F_7
+1933 4
+Charpol at p=2003 has roots [ <1, 4>, <6, 2> ] over F_7
+2003 4
+Charpol at p=2017 has roots [ <2, 1>, <4, 1>, <6, 4> ] over F_7
+2017 4
+Charpol at p=2087 has roots [ <1, 4>, <6, 2> ] over F_7
+2087 4
+Charpol at p=2129 has roots [ <6, 6> ] over F_7
+2129 4
+Charpol at p=2143 has roots [ <1, 2>, <3, 1>, <5, 1>, <6, 2> ] over F_7
+2143 4
+Charpol at p=2213 has roots [ <6, 6> ] over F_7
+2213 4
+Charpol at p=2269 has roots [ <2, 3>, <4, 3> ] over F_7
+2269 4
+Charpol at p=2297 has roots [ <6, 6> ] over F_7
+2297 4
+Charpol at p=2311 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+2311 4
+Charpol at p=2339 has roots [ <1, 4>, <6, 2> ] over F_7
+2339 4
+Charpol at p=2381 has roots [ <6, 6> ] over F_7
+2381 4
+Charpol at p=2423 has roots [ <1, 4>, <6, 2> ] over F_7
+2423 4
+Charpol at p=2437 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+2437 4
+Charpol at p=2521 has roots [ <2, 2>, <4, 2>, <6, 2> ] over F_7
+2521 4
+Charpol at p=2549 has roots [ <6, 6> ] over F_7
+2549 4
+Charpol at p=2591 has roots [ <1, 4>, <6, 2> ] over F_7
+2591 4
+Charpol at p=2633 has roots [ <6, 6> ] over F_7
+2633 4
+Charpol at p=2647 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+2647 4
+Charpol at p=2689 has roots [ <2, 1>, <4, 1>, <6, 4> ] over F_7
+2689 4
+Charpol at p=2731 has roots [ <1, 2>, <3, 1>, <5, 1>, <6, 2> ] over F_7
+2731 4
+Charpol at p=2801 has roots [ <6, 6> ] over F_7
+2801 4
+Charpol at p=2843 has roots [ <1, 4>, <6, 2> ] over F_7
+2843 4
+Charpol at p=2857 has roots [ <3, 3>, <5, 3> ] over F_7
+2857 4
+Charpol at p=2927 has roots [ <1, 4>, <6, 2> ] over F_7
+2927 4
+Charpol at p=2969 has roots [ <6, 6> ] over F_7
+2969 4
+Charpol at p=3011 has roots [ <1, 4>, <6, 2> ] over F_7
+3011 4
+Charpol at p=3067 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+3067 4
+Charpol at p=3109 has roots [ <2, 3>, <4, 3> ] over F_7
+3109 4
+Charpol at p=3137 has roots [ <6, 6> ] over F_7
+3137 4
+Charpol at p=3221 has roots [ <6, 6> ] over F_7
+3221 4
+Charpol at p=3319 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+3319 4
+Charpol at p=3347 has roots [ <1, 4>, <6, 2> ] over F_7
+3347 4
+Charpol at p=3361 has roots [ <3, 3>, <5, 3> ] over F_7
+3361 4
+Charpol at p=3389 has roots [ <6, 6> ] over F_7
+3389 4
+Charpol at p=3529 has roots [ <2, 2>, <4, 2>, <6, 2> ] over F_7
+3529 4
+Charpol at p=3557 has roots [ <6, 6> ] over F_7
+3557 4
+Charpol at p=3571 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+3571 4
+Charpol at p=3613 has roots [ <2, 3>, <4, 3> ] over F_7
+3613 4
+Charpol at p=3697 has roots [ <1, 2>, <2, 2>, <4, 2> ] over F_7
+3697 4
+Charpol at p=3739 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+3739 4
+Charpol at p=3767 has roots [ <1, 4>, <6, 2> ] over F_7
+3767 4
+Charpol at p=3823 has roots [ <1, 2>, <6, 4> ] over F_7
+3823 4
+Charpol at p=3851 has roots [ <1, 4>, <6, 2> ] over F_7
+3851 4
+Charpol at p=3907 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+3907 4
+Charpol at p=4019 has roots [ <1, 4>, <6, 2> ] over F_7
+4019 4
+Charpol at p=4159 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+4159 4
+Charpol at p=4201 has roots [ <1, 2>, <3, 2>, <5, 2> ] over F_7
+4201 4
+Charpol at p=4229 has roots [ <6, 6> ] over F_7
+4229 4
+Charpol at p=4243 has roots [ <1, 2>, <2, 1>, <3, 1>, <4, 1>, <5, 1> ] over F_7
+4243 4
+Charpol at p=4271 has roots [ <1, 4>, <6, 2> ] over F_7
+4271 4
+Charpol at p=4327 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+4327 4
+Charpol at p=4397 has roots [ <6, 6> ] over F_7
+4397 4
+Charpol at p=4481 has roots [ <6, 6> ] over F_7
+4481 4
+Charpol at p=4523 has roots [ <1, 4>, <6, 2> ] over F_7
+4523 4
+Charpol at p=4621 has roots [ <2, 2>, <4, 2>, <6, 2> ] over F_7
+4621 4
+Charpol at p=4649 has roots [ <6, 6> ] over F_7
+4649 4
+Charpol at p=4663 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+4663 4
+Charpol at p=4691 has roots [ <1, 4>, <6, 2> ] over F_7
+4691 4
+Charpol at p=4733 has roots [ <6, 6> ] over F_7
+4733 4
+Charpol at p=4789 has roots [ <2, 2>, <4, 2>, <6, 2> ] over F_7
+4789 4
+Charpol at p=4817 has roots [ <6, 6> ] over F_7
+4817 4
+Charpol at p=4831 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+4831 4
+Charpol at p=4943 has roots [ <1, 4>, <6, 2> ] over F_7
+4943 4
+Charpol at p=4957 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+4957 4
+Charpol at p=4999 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+4999 4
+Charpol at p=5153 has roots [ <6, 6> ] over F_7
+5153 4
+Charpol at p=5167 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+5167 4
+Charpol at p=5209 has roots [ <1, 4>, <6, 2> ] over F_7
+5209 4
+Charpol at p=5237 has roots [ <6, 6> ] over F_7
+5237 4
+Charpol at p=5279 has roots [ <1, 4>, <6, 2> ] over F_7
+5279 4
+Charpol at p=5419 has roots [ <1, 2>, <3, 1>, <5, 1>, <6, 2> ] over F_7
+5419 4
+Charpol at p=5503 has roots [ <1, 4>, <6, 2> ] over F_7
+5503 4
+Charpol at p=5531 has roots [ <1, 4>, <6, 2> ] over F_7
+5531 4
+Charpol at p=5573 has roots [ <6, 6> ] over F_7
+5573 4
+Charpol at p=5657 has roots [ <6, 6> ] over F_7
+5657 4
+Charpol at p=5741 has roots [ <6, 6> ] over F_7
+5741 4
+Charpol at p=5783 has roots [ <1, 4>, <6, 2> ] over F_7
+5783 4
+Charpol at p=5839 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+5839 4
+Charpol at p=5867 has roots [ <1, 4>, <6, 2> ] over F_7
+5867 4
+Charpol at p=5881 has roots [ <1, 2>, <3, 2>, <5, 2> ] over F_7
+5881 4
+Charpol at p=5923 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+5923 4
+Charpol at p=6007 has roots [ <1, 2>, <3, 1>, <5, 1>, <6, 2> ] over F_7
+6007 4
+Charpol at p=6091 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+6091 4
+Charpol at p=6133 has roots [ <1, 4>, <2, 1>, <4, 1> ] over F_7
+6133 4
+Charpol at p=6203 has roots [ <1, 4>, <6, 2> ] over F_7
+6203 4
+Charpol at p=6217 has roots [ <1, 2>, <6, 4> ] over F_7
+6217 4
+Charpol at p=6287 has roots [ <1, 4>, <6, 2> ] over F_7
+6287 4
+Charpol at p=6301 has roots [ <2, 1>, <4, 1>, <6, 4> ] over F_7
+6301 4
+Charpol at p=6329 has roots [ <6, 6> ] over F_7
+6329 4
+Charpol at p=6343 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+6343 4
+Charpol at p=6427 has roots [ <1, 2>, <3, 1>, <5, 1>, <6, 2> ] over F_7
+6427 4
+Charpol at p=6469 has roots [ <2, 1>, <3, 2>, <4, 1>, <5, 2> ] over F_7
+6469 4
+Charpol at p=6553 has roots [ <2, 3>, <4, 3> ] over F_7
+6553 4
+Charpol at p=6581 has roots [ <6, 6> ] over F_7
+6581 4
+Charpol at p=6637 has roots [ <1, 2>, <2, 2>, <4, 2> ] over F_7
+6637 4
+Charpol at p=6679 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+6679 4
+Charpol at p=6763 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+6763 4
+Charpol at p=6791 has roots [ <1, 4>, <6, 2> ] over F_7
+6791 4
+Charpol at p=6833 has roots [ <6, 6> ] over F_7
+6833 4
+Charpol at p=6917 has roots [ <6, 6> ] over F_7
+6917 4
+Charpol at p=6959 has roots [ <1, 4>, <6, 2> ] over F_7
+6959 4
+Charpol at p=7001 has roots [ <6, 6> ] over F_7
+7001 4
+Charpol at p=7043 has roots [ <1, 4>, <6, 2> ] over F_7
+7043 4
+Charpol at p=7057 has roots [ <1, 4>, <6, 2> ] over F_7
+7057 4
+Charpol at p=7127 has roots [ <1, 4>, <6, 2> ] over F_7
+7127 4
+Charpol at p=7211 has roots [ <1, 4>, <6, 2> ] over F_7
+7211 4
+Charpol at p=7253 has roots [ <6, 6> ] over F_7
+7253 4
+Charpol at p=7309 has roots [ <2, 3>, <4, 3> ] over F_7
+7309 4
+Charpol at p=7351 has roots [ <2, 1>, <3, 1>, <4, 1>, <5, 1>, <6, 2> ] over F_7
+7351 4
+Charpol at p=7393 has roots [ <2, 3>, <4, 3> ] over F_7
+7393 4
+Charpol at p=7477 has roots [ <3, 2>, <5, 2>, <6, 2> ] over F_7
+7477 4
+Charpol at p=7547 has roots [ <1, 4>, <6, 2> ] over F_7
+7547 4
+Charpol at p=7561 has roots [ <3, 3>, <5, 3> ] over F_7
+7561 4
+Charpol at p=7589 has roots [ <6, 6> ] over F_7
+7589 4
+Charpol at p=7603 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+7603 4
+Charpol at p=7673 has roots [ <6, 6> ] over F_7
+7673 4
+Charpol at p=7687 has roots [ <2, 2>, <3, 1>, <4, 2>, <5, 1> ] over F_7
+7687 4
+Charpol at p=7757 has roots [ <6, 6> ] over F_7
+7757 4
+Charpol at p=7841 has roots [ <6, 6> ] over F_7
+7841 4
+Charpol at p=7883 has roots [ <1, 4>, <6, 2> ] over F_7
+7883 4
+Charpol at p=8009 has roots [ <6, 6> ] over F_7
+8009 4
+Charpol at p=8093 has roots [ <6, 6> ] over F_7
+8093 4
+Charpol at p=8191 has roots [ <1, 2>, <2, 1>, <4, 1>, <6, 2> ] over F_7
+8191 4
+Checked 167 primes, up to <8191, T^6 + T^5 + 6*T^4 + 5*T^3 + 6*T^2 + T + 1>
+Based on the L-polynomials at ORDINARY primes, only the following characters COULD appear as subquotients of rhobar_7:
+Found 4 potential characters. Every Lpoly (factor) used has at least 6 linear factors over F_7.
+4
+
+Total time: 4.769 seconds, Total memory usage: 32.09MB
