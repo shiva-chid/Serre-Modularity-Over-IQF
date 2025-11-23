@@ -11,6 +11,8 @@ f := Open(fname, "r");
 
     split_nums := Split(line, "[]\n");
 
+    split_nums := split_nums[1..20];
+
     for coeffs in split_nums do
         strs := Split(coeffs, " ,");
         nums :=[];
@@ -22,15 +24,16 @@ f := Open(fname, "r");
         if #chars eq 0 then 
             chars, allroots := find_onedimchar(f,7: useinertFrobsq := false);
             if #chars eq 0 then 
-                Append(~badlist, f);
+                _ := Append(~badlist, f);
                 continue;
             end if;
         end if;
         for c in chars do
-            Append(~goodlist, <f, Conductor(c`char), c`values_modell>);
+            _ := Append(~goodlist, <f, Conductor(c`char), c`values_modell>);
         end for;
-        print goodlist;
-        print badlist;
+
     end for;
 
+    print goodlist;
+    print badlist;
 
