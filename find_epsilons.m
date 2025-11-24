@@ -1,39 +1,47 @@
 fname := "nonsurj7.txt";
-outname := "chars_conds.txt";
+outfile := "./chars_conds/conds_charpolys";
+suff := ".txt";
 P<x> := PolynomialRing(Integers());
-goodlist := [];
-badlist := [];
+
 
 f := Open(fname, "r");
 
-
     line := Read(f);
+
+delete f;
+
 
     split_nums := Split(line, "[]\n");
 
-    split_nums := split_nums[1..20];
-
-    for coeffs in split_nums do
-        strs := Split(coeffs, " ,");
+    for i in [1..10] do
+        strs := Split(split_nums[i], " ,");
         nums :=[];
+        of := outfile cat IntegerToString(i) cat suff;
         for str in strs do
             Append(~nums, StringToInteger(str));
         end for;
         f := elt<P | nums>;
         chars, allroots := find_onedimchar(f, 7);
-        if #chars eq 0 then 
+        /*if #chars eq 0 then 
             chars, allroots := find_onedimchar(f,7: useinertFrobsq := false);
             if #chars eq 0 then 
-                _ := Append(~badlist, f);
+                Append(~badlist, f);
                 continue;
             end if;
         end if;
-        for c in chars do
-            _ := Append(~goodlist, <f, Conductor(c`char), c`values_modell>);
+        */
+        
+        if #chars eq 2 then
+        s := "f := " cat Sprint(f) cat ";\ne1cond := " cat Sprint(Conductor(chars[1]`char)) cat ";\n";
+            for k in [1..2] do
+                
+                dets := find_determinant(f, 7, chars[k]`char);
+                for j in [1..#dets] do
+                    primes_dets_traces := find_trace(f, 7, chars[k]`char, dets[j]`char);
+                    s := s cat "polys" cat IntegerToString(k) cat IntegerToString(j) cat " := " cat Sprint(primes_dets_traces) cat ";\n";
+                end for;
         end for;
 
     end for;
 
-    print goodlist;
-    print badlist;
 
