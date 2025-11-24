@@ -6,12 +6,12 @@ P<x> := PolynomialRing(Integers());
 
 f := Open(fname, "r");
 
-    line := Read(f);
+line := Read(f);
 
 delete f;
 
 
-    split_nums := Split(line, "[]\n");
+split_nums := Split(line, "[]\n");
 
     for i in [1..10] do
         strs := Split(split_nums[i], " ,");
@@ -40,8 +40,10 @@ delete f;
                     primes_dets_traces := find_trace(f, 7, chars[k]`char, dets[j]`char);
                     s := s cat "polys" cat IntegerToString(k) cat IntegerToString(j) cat " := " cat Sprint(primes_dets_traces) cat ";\n";
                 end for;
-        end for;
+            end for;
 
+            Write(of, s : Overwrite := true);
+        end if;
     end for;
 
 
