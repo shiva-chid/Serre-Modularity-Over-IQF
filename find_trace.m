@@ -1,5 +1,5 @@
 
-intrinsic find_trace(g :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : primes_bound := 400, unramified := false) -> SeqEnum
+intrinsic find_trace(g :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : charpols := [], primes_bound := 400, unramified := false) -> SeqEnum
 {returns list of traces and determinants of the two dimensional subrepresentation of the Galois group of K=Q(zeta_3) 
 in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) above various primes.}
     // From find_onedimchar
@@ -27,7 +27,9 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
 
 
     F_ell := GF(ell, 2);
-    charpols := getcharpols(f : primesend := primes_bound);
+    if #charpols eq 0 then
+        charpols := getcharpols(f : primesend := primes_bound);
+    end if;
 
     // printf "Charpols found at primes:\n%o\n", [x[1] : x in charpols];
     charpols := [x : x in charpols | x[1] mod 3 eq 1 and x[1] ne ell];

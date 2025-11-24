@@ -21,7 +21,8 @@ split_nums := Split(line, "[]\n");
             Append(~nums, StringToInteger(str));
         end for;
         f := elt<P | nums>;
-        chars, allroots := find_onedimchar(f, 7);
+        frobcharpols := getcharpols(f : primesend := 100);
+        chars, allroots := find_onedimchar(f, 7 : charpols := frobcharpols);
         /*if #chars eq 0 then 
             chars, allroots := find_onedimchar(f,7: useinertFrobsq := false);
             if #chars eq 0 then 
@@ -35,9 +36,9 @@ split_nums := Split(line, "[]\n");
         s := "f := " cat Sprint(f) cat ";\ne1cond := " cat Sprint(Conductor(chars[1]`char)) cat ";\n";
             for k in [1..2] do
                 
-                dets := find_determinant(f, 7, chars[k]`char);
+                dets := find_determinant(f, 7, chars[k]`char: charpols := frobcharpols);
                 for j in [1..#dets] do
-                    primes_dets_traces := find_trace(f, 7, chars[k]`char, dets[j]`char);
+                    primes_dets_traces := find_trace(f, 7, chars[k]`char, dets[j]`char : charpols := frobcharpols);
                     s := s cat "polys" cat IntegerToString(k) cat IntegerToString(j) cat " := " cat Sprint(primes_dets_traces) cat ";\n";
                 end for;
             end for;

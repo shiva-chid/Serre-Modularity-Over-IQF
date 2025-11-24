@@ -25,7 +25,10 @@ possibly occur as the determinant of a 2-d subrepresentation in the mod-ell Galo
     OK_targ := RingOfIntegers(K_targ);
     ellabove := PrimeIdealsOverPrime(K_targ,ell);
     OK_targ_modell, resmodell := ResidueClassField(OK_targ,ellabove[1]);
-    charpols := getcharpols(f : primesend := primes_bound);
+
+    if #charpols eq 0 then
+        charpols := getcharpols(f : primesend := primes_bound);
+    end if;
 
     // printf "Charpols found at primes:\n%o\n", [x[1] : x in charpols];
     if useinertFrobsq then
