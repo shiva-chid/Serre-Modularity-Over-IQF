@@ -14,7 +14,7 @@ delete f;
 
 split_nums := Split(line, "[]\n");
 
-    for i in [1..#split_nums] do // Range of polynomiLs to compute over
+    for i in [1..#split_nums] do // Range of polynomials to compute over
         str_i := IntegerToString(i);
         strs := Split(split_nums[i], " ,");
         nums :=[];
@@ -22,18 +22,18 @@ split_nums := Split(line, "[]\n");
             Append(~nums, StringToInteger(str));
         end for;
         f := elt<P | nums>;
-        frobcharpols := getcharpols(f : primesend := 100);
+        frobcharpols := getcharpols(f : primesend := 1000);
         chars, allroots := find_onedimchar(f, 7 : charpols := frobcharpols);
 
         if #chars gt 0 then
-            s := "f" cat str_i cat " := " cat Sprint(f) cat ";\n\n";
+            s := "f_" cat str_i cat " := " cat Sprint(f) cat ";\n\n";
 
             for j in [1..#chars] do
                 str_j := IntegerToString(j);
-                name1 := "e1" cat str_i cat strj cat ":= ";
-                name2 := "e1" cat str_i cat strj "cond := ";
-                s := s cat name1 cat Sprint(chars[i]`char) cat ";\n";
-                s := s cat name2 cat Sprint(Conductor(chars[1]`char)) cat ";\n\n";
+                name1 := "e1_" cat str_i cat "_" cat str_j cat " := ";
+                name2 := "e1_cond_" cat str_i cat "_" cat str_j cat " := ";
+                s := s cat name1 cat Sprint(chars[j]`char) cat ";\n";
+                s := s cat name2 cat Sprint(Conductor(chars[j]`char)) cat ";\n\n";
             end for;
             s := s cat "\n";
 

@@ -133,6 +133,9 @@ it's enough to test only chi or chi^-1.
         Append(~X_chars_values,rec<RF | char := chi, values_modell := chi_values_modell>);
     end for;
 
+
+// Previous Attempt
+
     if #X_chars_values eq 6 then
         
         chars := X_chars_values;
@@ -152,6 +155,27 @@ it's enough to test only chi or chi^-1.
            if #conductor1_list eq 2 then X_chars_values := conductor2_list; 
            end if;
         end if;
+    end if;
+
+
+
+
+    if #X_chars_values gt 0 then
+        new_chars_list := [];
+        for i in [1..#X_chars_values] do
+            for j in [1..#X_chars_values] do
+                if i cmpne j then
+                    if Conductor(X_chars_values[i]`char) eq Conductor(X_chars_values[j]`char) then
+                        Append(~new_chars_list, X_chars_values[i]);
+                        break;
+                    end if;
+                end if;
+            end for;
+        end for;  
+
+        if #new_chars_list gt 0 then
+            X_chars_values := new_chars_list;
+        end if;          
     end if;
 
 
@@ -181,6 +205,7 @@ it's enough to test only chi or chi^-1.
 */
     // printf "Based on the L-polynomials at ORDINARY primes, only the following characters COULD appear as subquotients of rhobar_%o:\n", ell;
     // printf "Found %o potential characters. Every Lpoly (factor) used has at least %o linear factors over F_%o.\n", #X_chars, number_linearfacs, ell;
+
 /*
     if number_linearfacs eq 2 and #X_chars eq 4 then
         prod_all_chars := X_chars[1]*X_chars[2]*X_chars[3]*X_chars[4];
@@ -196,9 +221,13 @@ it's enough to test only chi or chi^-1.
         printf "The product of a dual-pair of characters appearing in rhobar_%o is the mod-%o cyclotomic character. Pairing up the characters that could appear, using this fact.\n", ell, ell;
         X_chars_values := X_chars_values_new;
     end if;
+    
 */
     return X_chars_values, all_roots_charpolsmodell;
 end intrinsic;
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Example: Finding the 1-dim subquotient reps of \ell-torsion representation of the Jacobian of a Picard curve   //
