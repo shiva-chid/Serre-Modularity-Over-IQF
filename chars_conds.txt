@@ -1,0 +1,926 @@
+f_1 := x^4 + 2*x^3 + 4*x^2 + 2*x + 1;
+
+e1_1_1 := $.1^5*$.3^3;
+e1_cond_1_1 := Principal Ideal
+Generator:
+[12, 0];
+
+e1_1_2 := $.1*$.3^3*$.4^3;
+e1_cond_1_2 := Principal Ideal
+Generator:
+[12, 0];
+
+
+
+f_2 := 2*x^4 + 4*x^3 + 8*x^2 + 4*x + 2;
+
+e1_2_1 := $.1^3*$.3^3;
+e1_cond_2_1 := Ideal
+Two element generators:
+[12, 0]
+[8, 4];
+
+e1_2_2 := $.1^3*$.3^3*$.4^3;
+e1_cond_2_2 := Ideal
+Two element generators:
+[12, 0]
+[8, 4];
+
+
+
+f_3 := 8*x^4 + 8*x^3 + 8*x^2 + 4*x + 1;
+
+e1_3_1 := $.1*$.3^3;
+e1_cond_3_1 := Principal Ideal
+Generator:
+[12, 0];
+
+e1_3_2 := $.1^5*$.3^3*$.4^3;
+e1_cond_3_2 := Principal Ideal
+Generator:
+[12, 0];
+
+
+
+f_4 := 4*x^4 + 68*x^3 - 74*x^2 + 26*x - 3;
+
+e1_4_1 := $.1^3*$.2^2*$.3*$.4*$.5^3;
+e1_cond_4_1 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_4_2 := $.1^4*$.2^5*$.5^3;
+e1_cond_4_2 := Principal Ideal
+Generator:
+[84, 0];
+
+
+
+f_5 := 3*x^4 + 6*x^3 + 12*x^2 + 6*x + 3;
+
+e1_5_1 := $.1^5*$.3^5*$.4^2;
+e1_cond_5_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_5_2 := $.1*$.3*$.4;
+e1_cond_5_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_6 := 648*x^4 + 289*x^3 + 42*x^2 + 2*x;
+
+e1_6_1 := 1;
+e1_cond_6_1 := Principal Ideal
+Generator:
+[1, 0];
+
+e1_6_2 := $.2^5*$.5^3;
+e1_cond_6_2 := Ideal
+Basis:
+[ 4 68]
+[ 0 84];
+
+e1_6_3 := $.1^5*$.2^5*$.3^5*$.4^5;
+e1_cond_6_3 := Principal Ideal
+Generator:
+[7, 0];
+
+e1_6_4 := $.1^5*$.3^5*$.4^5*$.5^3;
+e1_cond_6_4 := Ideal
+Basis:
+[ 4 20]
+[ 0 84];
+
+
+
+f_8 := x^4 + 30*x^2 + 8*x - 3;
+
+e1_8_1 := $.1*$.2^2*$.3^3;
+e1_cond_8_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_8_2 := $.1^5*$.2^4*$.3^4;
+e1_cond_8_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_9 := 5*x^4 + 10*x^3 + 20*x^2 + 10*x + 5;
+
+e1_9_1 := $.1*$.2^2*$.3^3*$.4^3;
+e1_cond_9_1 := Principal Ideal
+Generator:
+[60, 0];
+
+e1_9_2 := $.1^5*$.2^4*$.3^3;
+e1_cond_9_2 := Principal Ideal
+Generator:
+[60, 0];
+
+
+
+f_10 := 8*x^4 + 136*x^3 - 148*x^2 + 52*x - 6;
+
+e1_10_1 := $.1*$.2^2*$.3^3*$.4^3*$.5^3;
+e1_cond_10_1 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_10_2 := $.2^5*$.3^4*$.4^4*$.5^3;
+e1_cond_10_2 := Principal Ideal
+Generator:
+[84, 0];
+
+
+
+f_11 := 12*x^4 + 8*x^3 - 48*x^2 + 36*x - 7;
+
+e1_11_1 := $.2^3*$.3^5;
+e1_cond_11_1 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+
+
+f_12 := 6*x^4 + 12*x^3 + 24*x^2 + 12*x + 6;
+
+e1_12_1 := $.1^3*$.3^5*$.4^2;
+e1_cond_12_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_12_2 := $.1^3*$.3*$.4;
+e1_cond_12_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_13 := 1296*x^4 + 578*x^3 + 84*x^2 + 4*x;
+
+e1_13_1 := $.1^3*$.2^5*$.3*$.4;
+e1_cond_13_1 := Principal Ideal
+Generator:
+[42, 0];
+
+e1_13_2 := $.1*$.2^5*$.3^3*$.4^3;
+e1_cond_13_2 := Principal Ideal
+Generator:
+[42, 0];
+
+
+
+f_14 := 4*x^4 + 8*x^3 + 36*x^2 + 28*x + 5;
+
+e1_14_1 := $.1*$.3^2;
+e1_cond_14_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_14_2 := $.1^5*$.3^5;
+e1_cond_14_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_15 := 7*x^4 + 14*x^3 + 28*x^2 + 14*x + 7;
+
+e1_15_1 := $.1*$.2*$.4^2*$.5*$.6;
+e1_cond_15_1 := Ideal
+Two element generators:
+[420, 0]
+[280, 140];
+
+e1_15_2 := $.1^2*$.2^2*$.3*$.4^4*$.5^5;
+e1_cond_15_2 := Ideal
+Two element generators:
+[420, 0]
+[280, 140];
+
+
+
+f_17 := 9*x^4 + 12*x^3 + 36*x^2 + 24*x + 4;
+
+e1_17_1 := $.1^5*$.3^2;
+e1_cond_17_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_17_2 := $.1*$.3^5;
+e1_cond_17_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_18 := 24*x^4 + 24*x^3 + 24*x^2 + 12*x + 3;
+
+e1_18_1 := $.1*$.3^5*$.4^2;
+e1_cond_18_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_18_2 := $.1^5*$.3*$.4;
+e1_cond_18_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_19 := 12*x^4 + 204*x^3 - 222*x^2 + 78*x - 9;
+
+e1_19_1 := $.1^3*$.2^2*$.3*$.4^3*$.5;
+e1_cond_19_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_19_2 := $.1^4*$.2^5*$.4^4*$.5^5;
+e1_cond_19_2 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_20 := x^4 + 20*x^3 - 56*x + 44;
+
+e1_20_1 := $.1^4*$.2*$.3;
+e1_cond_20_1 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+e1_20_2 := $.1^2*$.2^5*$.3^3;
+e1_cond_20_2 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+
+
+f_21 := 9*x^4 + 18*x^3 + 36*x^2 + 18*x + 9;
+
+e1_21_1 := $.1*$.3^5*$.4^5;
+e1_cond_21_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_21_2 := $.1^5*$.3*$.4^4;
+e1_cond_21_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_23 := 125*x^4 + 150*x^3 + 80*x^2 + 20*x + 2;
+
+e1_23_1 := $.1*$.2^4*$.3^3*$.4^3;
+e1_cond_23_1 := Ideal
+Two element generators:
+[60, 0]
+[40, 20];
+
+e1_23_2 := $.1^5*$.2^2*$.3^3;
+e1_cond_23_2 := Ideal
+Two element generators:
+[60, 0]
+[40, 20];
+
+
+
+f_24 := 1944*x^4 + 867*x^3 + 126*x^2 + 6*x;
+
+e1_24_1 := $.1^5*$.2^5*$.3^5*$.4^3*$.5^2;
+e1_cond_24_1 := Principal Ideal
+Generator:
+[63, 0];
+
+e1_24_2 := $.1^5*$.2^5*$.3^5*$.4*$.5^4;
+e1_cond_24_2 := Principal Ideal
+Generator:
+[63, 0];
+
+
+
+f_25 := 2187*x^4 + 1586*x^3 + 420*x^2 + 48*x + 2;
+
+e1_25_1 := $.1^3*$.3^2*$.4^5*$.5^3;
+e1_cond_25_1 := Ideal
+Two element generators:
+[84, 0]
+[36, 12];
+
+e1_25_2 := $.1^3*$.3*$.4*$.5^3;
+e1_cond_25_2 := Ideal
+Two element generators:
+[84, 0]
+[36, 12];
+
+
+
+f_26 := 27*x^4 + 306*x^3 - 222*x^2 + 52*x - 4;
+
+e1_26_1 := $.1^2*$.2^5*$.3^2*$.4^4*$.5;
+e1_cond_26_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_26_2 := $.1^5*$.2^2*$.3^5*$.4^3*$.5^5;
+e1_cond_26_2 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_27 := 10*x^4 + 20*x^3 + 40*x^2 + 20*x + 10;
+
+e1_27_1 := $.1^3*$.2^2*$.3^3*$.4^3;
+e1_cond_27_1 := Principal Ideal
+Generator:
+[60, 0];
+
+e1_27_2 := $.1^3*$.2^4*$.3^3;
+e1_cond_27_2 := Principal Ideal
+Generator:
+[60, 0];
+
+
+
+f_28 := 36*x^4 + 24*x^3 + 36*x^2 + 12*x + 1;
+
+e1_28_1 := $.1*$.2^2;
+e1_cond_28_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_28_2 := $.1^5*$.2^4*$.3;
+e1_cond_28_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_30 := 16*x^4 + 272*x^3 - 296*x^2 + 104*x - 12;
+
+e1_30_1 := $.1^2*$.2^5*$.3^2*$.4^2*$.5^3;
+e1_cond_30_1 := Ideal
+Two element generators:
+[84, 0]
+[56, 28];
+
+e1_30_2 := $.1^5*$.2^2*$.3^5*$.4^5*$.5^3;
+e1_cond_30_2 := Ideal
+Two element generators:
+[84, 0]
+[56, 28];
+
+
+
+f_31 := 3*x^4 + 244*x^3 + 36*x^2 - 72*x + 12;
+
+e1_31_1 := $.1^4*$.2^5*$.3^3*$.4^3*$.5^2;
+e1_cond_31_1 := Ideal
+Two element generators:
+[1512, 0]
+[168, 336];
+
+e1_31_2 := $.1^3*$.2^2*$.3^4*$.4^4*$.5^5;
+e1_cond_31_2 := Ideal
+Two element generators:
+[1512, 0]
+[168, 336];
+
+
+
+f_32 := 24*x^4 + 16*x^3 - 96*x^2 + 72*x - 14;
+
+e1_32_1 := $.1^4*$.2*$.3;
+e1_cond_32_1 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+e1_32_2 := $.1^2*$.2^5*$.3^3;
+e1_cond_32_2 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+
+
+f_33 := x^4 + 110*x^3 - 30*x^2 - 4*x + 4;
+
+e1_33_1 := $.1^2*$.2^5*$.3^2*$.5^5;
+e1_cond_33_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_33_2 := $.1^5*$.2^2*$.3^5*$.4*$.5;
+e1_cond_33_2 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_34 := 8*x^4 + 16*x^3 + 72*x^2 + 56*x + 10;
+
+e1_34_1 := $.1^3*$.2^2;
+e1_cond_34_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_34_2 := $.1^3*$.2^4*$.3;
+e1_cond_34_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_35 := 108*x^4 + 612*x^3 - 222*x^2 + 26*x - 1;
+
+e1_35_1 := $.1^3*$.2^2*$.3*$.4^5*$.5^5;
+e1_cond_35_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_35_2 := $.1^4*$.2^5*$.4^2*$.5;
+e1_cond_35_2 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_36 := 40*x^4 + 40*x^3 + 40*x^2 + 20*x + 5;
+
+e1_36_1 := $.1*$.2^4*$.3^3;
+e1_cond_36_1 := Ideal
+Two element generators:
+[60, 0]
+[40, 20];
+
+e1_36_2 := $.1^5*$.2^2*$.3^3*$.4^3;
+e1_cond_36_2 := Ideal
+Two element generators:
+[60, 0]
+[40, 20];
+
+
+
+f_37 := x^4 + 714*x^3 - 924*x^2 + 98*x + 147;
+
+e1_37_1 := $.1^5*$.2*$.4*$.5^3;
+e1_cond_37_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_37_2 := $.1^2*$.2^4*$.3^3*$.4^4*$.5^4;
+e1_cond_37_2 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_37_3 := $.2^4*$.3^5*$.4^4*$.5^3;
+e1_cond_37_3 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_37_4 := $.1^3*$.2*$.3^2*$.4*$.5^2;
+e1_cond_37_4 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_38 := x^4 + 40*x^3 + 117*x^2 - 25*x + 11;
+
+e1_38_1 := $.1*$.3*$.4^5*$.5;
+e1_cond_38_1 := Principal Ideal
+Generator:
+[315, 0];
+
+e1_38_2 := $.1*$.2^2*$.3^3*$.4^2*$.5^5;
+e1_cond_38_2 := Principal Ideal
+Generator:
+[315, 0];
+
+
+
+f_39 := 20*x^4 + 340*x^3 - 370*x^2 + 130*x - 15;
+
+e1_39_1 := $.1^2*$.2^4*$.3^5*$.4^4*$.5^4*$.6^4;
+e1_cond_39_1 := Ideal
+Two element generators:
+[420, 0]
+[280, 140];
+
+e1_39_2 := $.1*$.2^5*$.4^2*$.5^2*$.6;
+e1_cond_39_2 := Ideal
+Two element generators:
+[420, 0]
+[280, 140];
+
+
+
+f_40 := 3*x^4 + 2*x^3 - 18*x^2 - 90*x + 75;
+
+e1_40_1 := $.2^2*$.3^3*$.4;
+e1_cond_40_1 := Ideal
+Two element generators:
+[540, 0]
+[60, 120];
+
+e1_40_2 := $.2^4*$.3^3*$.4;
+e1_cond_40_2 := Ideal
+Two element generators:
+[540, 0]
+[60, 120];
+
+
+
+f_41 := 14*x^4 + 28*x^3 + 56*x^2 + 28*x + 14;
+
+e1_41_1 := $.2^3*$.3*$.4^2*$.6^4;
+e1_cond_41_1 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_41_2 := $.2^3*$.3*$.4^4*$.6;
+e1_cond_41_2 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_41_3 := $.2^2*$.3*$.4^4*$.5^5*$.6^4;
+e1_cond_41_3 := Principal Ideal
+Generator:
+[420, 0];
+
+e1_41_4 := $.1^3*$.2*$.4^2*$.5*$.6^3;
+e1_cond_41_4 := Principal Ideal
+Generator:
+[420, 0];
+
+e1_41_5 := $.1^3*$.4^4*$.6^3;
+e1_cond_41_5 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_41_6 := $.1^3*$.4^2;
+e1_cond_41_6 := Principal Ideal
+Generator:
+[84, 0];
+
+
+
+f_42 := 15*x^4 + 30*x^3 + 60*x^2 + 30*x + 15;
+
+e1_42_1 := $.1^5*$.2^4*$.3^5*$.4^2;
+e1_cond_42_1 := Principal Ideal
+Generator:
+[180, 0];
+
+e1_42_2 := $.1*$.2^2*$.3*$.4;
+e1_cond_42_2 := Principal Ideal
+Generator:
+[180, 0];
+
+
+
+f_43 := 12*x^4 + 488*x^3 + 36*x^2 - 36*x + 3;
+
+e1_43_1 := $.1*$.2^2*$.5^5;
+e1_cond_43_1 := Ideal
+Two element generators:
+[1512, 0]
+[168, 336];
+
+e1_43_2 := $.2^5*$.3*$.4*$.5^2;
+e1_cond_43_2 := Ideal
+Two element generators:
+[1512, 0]
+[168, 336];
+
+
+
+f_44 := 3*x^4 + 50*x^3 - 66*x^2 - 54*x + 71;
+
+e1_44_1 := $.1*$.4^3*$.5^2;
+e1_cond_44_1 := Ideal
+Basis:
+[ 12  60]
+[  0 252];
+
+e1_44_2 := $.1^4*$.2^5*$.3^5*$.4^2*$.5^4;
+e1_cond_44_2 := Ideal
+Basis:
+[ 12 204]
+[  0 252];
+
+e1_44_3 := $.1*$.4^3*$.5;
+e1_cond_44_3 := Ideal
+Basis:
+[ 12  60]
+[  0 252];
+
+e1_44_4 := $.1^4*$.2^5*$.3^5*$.4^2*$.5^5;
+e1_cond_44_4 := Ideal
+Basis:
+[ 12 204]
+[  0 252];
+
+
+
+f_45 := 1728*x^4 + 1156*x^3 + 252*x^2 + 18*x;
+
+e1_45_1 := $.1^3*$.2^5*$.3*$.4;
+e1_cond_45_1 := Principal Ideal
+Generator:
+[42, 0];
+
+e1_45_2 := $.1*$.2^5*$.3^3*$.4^3;
+e1_cond_45_2 := Principal Ideal
+Generator:
+[42, 0];
+
+
+
+f_46 := 24*x^4 + 408*x^3 - 444*x^2 + 156*x - 18;
+
+e1_46_1 := $.2^5*$.3^4*$.4^2*$.5^5;
+e1_cond_46_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_46_2 := $.1*$.2^2*$.3^3*$.4^5*$.5;
+e1_cond_46_2 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_47 := 36*x^4 + 24*x^3 - 144*x^2 + 108*x - 21;
+
+e1_47_1 := $.2^5*$.3^3;
+e1_cond_47_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_47_2 := $.2*$.3;
+e1_cond_47_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_48 := 4*x^4 + 1436*x^3 + 1224*x^2 + 198*x + 9;
+
+e1_48_1 := $.1*$.2*$.3^4*$.4^3*$.5^2;
+e1_cond_48_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_48_2 := $.1*$.2*$.3^4*$.4^5*$.5^3;
+e1_cond_48_2 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_48_3 := $.1^4*$.2^4*$.3*$.5^3;
+e1_cond_48_3 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_48_4 := $.1^4*$.2^4*$.3*$.4^2*$.5^4;
+e1_cond_48_4 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_50 := 18*x^4 + 36*x^3 + 72*x^2 + 36*x + 18;
+
+e1_50_1 := $.1^3*$.3^5*$.4^5;
+e1_cond_50_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_50_2 := $.1^3*$.3*$.4^4;
+e1_cond_50_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_51 := 12*x^4 + 20*x^3 - 6*x^2 + 30*x + 37;
+
+e1_51_1 := $.1^2*$.2^2*$.3^3*$.4;
+e1_cond_51_1 := Ideal
+Two element generators:
+[540, 0]
+[60, 120];
+
+e1_51_2 := $.1^4*$.2^4*$.3^3*$.4;
+e1_cond_51_2 := Ideal
+Two element generators:
+[540, 0]
+[60, 120];
+
+
+
+f_52 := 56*x^4 + 56*x^3 + 56*x^2 + 28*x + 7;
+
+e1_52_1 := $.1^5*$.2*$.4^2*$.5*$.6^5;
+e1_cond_52_1 := Principal Ideal
+Generator:
+[420, 0];
+
+e1_52_2 := $.1^4*$.2^2*$.3*$.4^4*$.5^5*$.6^2;
+e1_cond_52_2 := Principal Ideal
+Generator:
+[420, 0];
+
+
+
+f_53 := 250*x^4 + 300*x^3 + 160*x^2 + 40*x + 4;
+
+e1_53_1 := $.1^3*$.2^4*$.3^3*$.4^3;
+e1_cond_53_1 := Principal Ideal
+Generator:
+[60, 0];
+
+e1_53_2 := $.1^3*$.2^2*$.3^3;
+e1_cond_53_2 := Principal Ideal
+Generator:
+[60, 0];
+
+
+
+f_54 := 28*x^4 + 476*x^3 - 518*x^2 + 182*x - 21;
+
+e1_54_1 := $.1*$.2^4*$.3^3*$.4^3*$.5^3;
+e1_cond_54_1 := Principal Ideal
+Generator:
+[84, 0];
+
+e1_54_2 := $.1^2*$.2^5*$.5^3;
+e1_cond_54_2 := Principal Ideal
+Generator:
+[84, 0];
+
+
+
+f_55 := 72*x^4 + 48*x^3 + 72*x^2 + 24*x + 2;
+
+e1_55_1 := $.1^3*$.2^4*$.3^4;
+e1_cond_55_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_55_2 := $.1^3*$.2^2*$.3^3;
+e1_cond_55_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_56 := 81*x^4 + 144*x^3 - 54*x^2 + 1;
+
+e1_56_1 := $.1^4*$.2^5*$.3^3;
+e1_cond_56_1 := Principal Ideal
+Generator:
+[72, 0];
+
+e1_56_2 := $.1^2*$.2*$.3;
+e1_cond_56_2 := Principal Ideal
+Generator:
+[72, 0];
+
+
+
+f_57 := 12*x^4 + 124*x^3 + 102*x^2 - 12*x + 1;
+
+e1_57_1 := $.2^5*$.3^3*$.5^4;
+e1_cond_57_1 := Ideal
+Basis:
+[ 12 204]
+[  0 252];
+
+e1_57_2 := $.1^5*$.3^2*$.4^5*$.5^2;
+e1_cond_57_2 := Ideal
+Basis:
+[ 12  60]
+[  0 252];
+
+e1_57_3 := $.2^5*$.3^3*$.5^5;
+e1_cond_57_3 := Ideal
+Basis:
+[ 12 204]
+[  0 252];
+
+e1_57_4 := $.1^5*$.3^2*$.4^5*$.5;
+e1_cond_57_4 := Ideal
+Basis:
+[ 12  60]
+[  0 252];
+
+
+
+f_58 := 9*x^4 + 2154*x^3 + 1224*x^2 + 132*x + 4;
+
+e1_58_1 := $.1^3*$.2*$.3^2*$.4^3;
+e1_cond_58_1 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_58_2 := $.1^2*$.2^4*$.3^3*$.4^2;
+e1_cond_58_2 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_58_3 := $.1^5*$.2*$.4^5*$.5^5;
+e1_cond_58_3 := Principal Ideal
+Generator:
+[252, 0];
+
+e1_58_4 := $.2^4*$.3^5*$.5;
+e1_cond_58_4 := Principal Ideal
+Generator:
+[252, 0];
+
+
+
+f_59 := 9*x^4 + 96*x^3 - 99*x^2 - 15*x + 25;
+
+e1_59_1 := $.1*$.2^2*$.3^3*$.5^3;
+e1_cond_59_1 := Principal Ideal
+Generator:
+[315, 0];
+
+e1_59_2 := $.1*$.3*$.4*$.5^3;
+e1_cond_59_2 := Principal Ideal
+Generator:
+[315, 0];
+
+
+
+f_60 := 21*x^4 + 42*x^3 + 84*x^2 + 42*x + 21;
+
+e1_60_1 := $.1*$.2*$.4^2*$.5^5*$.6^5;
+e1_cond_60_1 := Principal Ideal
+Generator:
+[1260, 0];
+
+e1_60_2 := $.1^2*$.2^2*$.3*$.4^4*$.5*$.6^2;
+e1_cond_60_2 := Principal Ideal
+Generator:
+[1260, 0];
+
+
+
+f_62 := 27*x^4 + 90*x^2 + 8*x - 1;
+
+e1_62_1 := $.1^5*$.2^2;
+e1_cond_62_1 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+e1_62_2 := $.1*$.2^4*$.3;
+e1_cond_62_2 := Ideal
+Two element generators:
+[216, 0]
+[24, 48];
+
+
+
+f_63 := 72*x^4 + 72*x^3 + 72*x^2 + 36*x + 9;
+
+e1_63_1 := $.1*$.3*$.4^4;
+e1_cond_63_1 := Principal Ideal
+Generator:
+[36, 0];
+
+e1_63_2 := $.1^5*$.3^5*$.4^5;
+e1_cond_63_2 := Principal Ideal
+Generator:
+[36, 0];
+
+
+
+f_64 := 1620*x^4 + 1445*x^3 + 420*x^2 + 40*x;
+
+e1_64_1 := $.1^3*$.2*$.3^5*$.4^4*$.5^4*$.6^5;
+e1_cond_64_1 := Principal Ideal
+Generator:
+[105, 0];
+
+e1_64_2 := $.1^3*$.2^5*$.3^3*$.4^2*$.5^2*$.6^3;
+e1_cond_64_2 := Principal Ideal
+Generator:
+[105, 0];
+
+
+
