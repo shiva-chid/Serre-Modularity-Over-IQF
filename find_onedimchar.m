@@ -136,6 +136,7 @@ it's enough to test only chi or chi^-1.
 
 // Previous Attempt
 
+/*
     if #X_chars_values eq 6 then
         
         chars := X_chars_values;
@@ -178,7 +179,7 @@ it's enough to test only chi or chi^-1.
         end if;          
     end if;
 
-
+*/
     
 
 
