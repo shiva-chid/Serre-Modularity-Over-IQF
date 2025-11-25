@@ -1,3 +1,6 @@
 [submodule "picard_curves"]
 	path = picard_curves
 	url = https://github.com/JRSijsling/picard_curves
+[submodule "bianchi-progs"]
+	path = bianchi-progs
+	url = https://github.com/JohnCremona/bianchi-progs
