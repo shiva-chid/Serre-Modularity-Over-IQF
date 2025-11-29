@@ -153,7 +153,7 @@ it's enough to test only chi or chi^-1.
         if #conductor1_list eq 2 then
             X_chars_values := conductor1_list;
         else 
-           if #conductor1_list eq 2 then X_chars_values := conductor2_list; 
+           if #conductor2_list eq 2 then X_chars_values := conductor2_list;
            end if;
         end if;
     end if;
