@@ -45,9 +45,7 @@ possibly occur in the mod-ell Galois representation of the Jacobian of the curve
         charpols := [x : x in charpols | x[1] mod 3 eq 1 and x[1] ne ell];
     end if;
 //    print [x[1] : x in charpols];
-    if not ramified then
-        charpols := [x : x in charpols | x[1] mod ell eq 1];
-    end if;
+//    if not ramified then charpols := [x : x in charpols | x[1] mod ell eq 1]; end if;
 //    print [x[1] : x in charpols];
     if uselambdacharpols cmpne false then
         resF1_pol := hom<P_F->P_ell|resF1,T>;
