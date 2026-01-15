@@ -1,3 +1,68 @@
+intrinsic suppressed_integer_quartic(f :: RngUPolElt) -> RngUPolElt
+{Given a quartic polynomial f over the rationals, returns an integral polynomial g of the 
+form x^4+a*x^2+b*x+c, such that the curve y^3=f is isomorphic to the curve y^3=g.}
+    require Degree(f) eq 4 : "f must have degree 4";
+    P<x> := PolynomialRing(Rationals());
+    a4 := Coefficient(f,4);
+    if a4 ne 1 then
+        f := a4^3*Evaluate(f,x/a4);
+    end if;
+
+    a3 := Coefficient(f,3);
+    if a3 ne 0 then
+        f := Evaluate(f,x-a3/4);
+    end if;
+
+    coeffs := Coefficients(f)[1..3];
+    coeffs_dens := [Denominator(x) : x in coeffs];
+    pfacs_dens := &join[Set(PrimeFactors(x)) : x in coeffs_dens];
+    m := (pfacs_dens eq {}) select 1 else &*[p^n where n is Maximum([Ceiling(Valuation(coeffs_dens[i],p)/(15-3*i)) : i in [1..3]]) : p in pfacs_dens];
+
+    P<x> := PolynomialRing(Integers());
+    return P!([m^(15-3*i)*coeffs[i] : i in [1..3]] cat [0,1]);
+end intrinsic;
+
+intrinsic RadCond(f :: RngUPolElt) -> RngIntElt
+{Given a quartic polynomial f over the rationals, returns the product of the bad primes 
+of the suppressed integral model of the curve y^3=f.}
+    f := suppressed_integer_quartic(f);
+    radical_disc := &*([1] cat [p : p in PrimeFactors(Discriminant(f))]);
+    radical_leadcoeff := &*([1] cat [p : p in PrimeFactors(Coefficient(f,4))]);
+    radical_cond := LCM(radical_leadcoeff,radical_disc);
+    if radical_cond mod 3 ne 0 then
+        radical_cond := 3*radical_cond;
+    end if;
+    return radical_cond;
+end intrinsic;
+
+intrinsic getcharpols(f :: RngUPolElt : primesend := 500) -> SeqEnum
+{returns a sequence of tuples <p,charpol_p> where charpol_p is the characteristic polynomial 
+of Frobenius at p on the Tate module of the Jacobian of the curve y^3=f, and p ranges over 
+the good primes NthPrime(N) for all N within the given bounds.}
+    f := suppressed_integer_quartic(f);
+    P<x> := Parent(f);
+    N := Ceiling(Log(2,NthPrime(primesend)));
+    Nstr := IntegerToString(N);
+    fstr := &cat(Split(Sprint(f)," *"));
+    filename := Sprintf("temp_%o", Getpid());
+    _ := System("./hwlpolys y^3=" cat fstr cat " " cat Nstr cat " 1 0 -1 0 " cat filename);
+    fil := Open(filename, "r");
+    C := Coefficients(f)[1..3];
+    Lpols := liftLpolys(fil,C);
+    delete(fil);
+    System("rm " cat filename);
+    charpols := [<x[1],P!Reverse(x[2])> : x in Lpols];
+    return charpols;
+end intrinsic;
+
+intrinsic Bracket(r :: RngIntElt, f :: RngUPolElt) -> RngUPolElt
+{Given a positive integer r, and a polynomial f, returns the polynomial whose roots are the r-th powers
+of the roots of f.}
+    P<x> := Parent(f);
+    P2<y> := PolynomialRing(P);
+    return Resultant(P2 ! Coefficients(f), x-y^r);
+end intrinsic;
+
 intrinsic find_onedimchar(f :: RngUPolElt, ell :: RngIntElt : radical_cond := 1, primes_bound := 500, charpols := [], ramified := false, useinertFrobsq := false, uselambdacharpols := false, noskip := true, Hecke_stricteval := true) -> SeqEnum, SeqEnum
 {returns list of possible characters of the Galois group of K=Q(zeta_3) that can
 possibly occur in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x).}
