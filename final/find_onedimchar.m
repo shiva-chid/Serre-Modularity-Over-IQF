@@ -73,6 +73,8 @@ possibly occur in the mod-ell Galois representation of the Jacobian of the curve
     if radical_cond eq 1 then radical_cond := RadCond(f); end if;
     if ramified then
         radical_cond := (radical_cond mod ell eq 0) select radical_cond else ell*radical_cond;
+    else
+        radical_cond := radical_cond div ell^Valuation(radical_cond,ell);
     end if;
     cond := radical_cond^4;
     F<zeta3> := CyclotomicField(3);
