@@ -1,0 +1,186 @@
+>>>> Level 559872.1 = (432+432w), norm = 559872 <<<<
+Cuspidal dimension = 405
+Newspace has dimension 60
+New characteristic polynomial of T(P7a):
+Factors:
+1:      (degree 1)      X+4      to power 4
+2:      (degree 1)      X+3      to power 5
+3:      (degree 1)      X+1      to power 7
+4:      (degree 1)      X+2      to power 7
+5:      (degree 1)      X+5      to power 8
+6:      (degree 1)      X        to power 9
+7:      (degree 1)      X+6      to power 14
+8:      (degree 2)      X^2+6*X+3        to power 1
+9:      (degree 2)      X^2+X+3  to power 2
+
+New characteristic polynomial of T(P7b):
+Factors:
+1:      (degree 1)      X+4      to power 4
+2:      (degree 1)      X+3      to power 5
+3:      (degree 1)      X+1      to power 7
+4:      (degree 1)      X+2      to power 7
+5:      (degree 1)      X+5      to power 8
+6:      (degree 1)      X        to power 9
+7:      (degree 1)      X+6      to power 14
+8:      (degree 2)      X^2+6*X+3        to power 1
+9:      (degree 2)      X^2+X+3  to power 2
+
+New characteristic polynomial of T(P13a):
+Factors:
+1:      (degree 1)      X+6      to power 1
+2:      (degree 1)      X+1      to power 2
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+5      to power 7
+5:      (degree 1)      X+2      to power 8
+6:      (degree 1)      X+4      to power 10
+7:      (degree 1)      X+3      to power 14
+8:      (degree 2)      X^2+6*X+3        to power 2
+9:      (degree 2)      X^2+X+3  to power 4
+
+New characteristic polynomial of T(P13b):
+Factors:
+1:      (degree 1)      X+6      to power 1
+2:      (degree 1)      X+1      to power 2
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+5      to power 7
+5:      (degree 1)      X+2      to power 8
+6:      (degree 1)      X+4      to power 10
+7:      (degree 1)      X+3      to power 14
+8:      (degree 2)      X^2+6*X+3        to power 2
+9:      (degree 2)      X^2+X+3  to power 4
+
+New characteristic polynomial of T(P19a):
+Factors:
+1:      (degree 1)      X+1      to power 2
+2:      (degree 1)      X+6      to power 4
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+2      to power 8
+5:      (degree 1)      X+3      to power 9
+6:      (degree 1)      X+4      to power 9
+7:      (degree 1)      X+5      to power 10
+8:      (degree 2)      X^2+5*X+2        to power 2
+9:      (degree 2)      X^2+2*X+2        to power 4
+
+New characteristic polynomial of T(P19b):
+Factors:
+1:      (degree 1)      X+1      to power 2
+2:      (degree 1)      X+6      to power 4
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+2      to power 8
+5:      (degree 1)      X+3      to power 9
+6:      (degree 1)      X+4      to power 9
+7:      (degree 1)      X+5      to power 10
+8:      (degree 2)      X^2+5*X+2        to power 2
+9:      (degree 2)      X^2+2*X+2        to power 4
+
+New characteristic polynomial of T(P5):
+Factors:
+1:      (degree 1)      X+1      to power 6
+2:      (degree 1)      X+2      to power 6
+3:      (degree 1)      X+5      to power 6
+4:      (degree 1)      X+6      to power 6
+5:      (degree 1)      X+4      to power 8
+6:      (degree 1)      X+3      to power 16
+7:      (degree 2)      X^2+2*X+5        to power 2
+8:      (degree 2)      X^2+5*X+5        to power 4
+
+New characteristic polynomial of T(P31a):
+Factors:
+1:      (degree 1)      X+6      to power 5
+2:      (degree 1)      X+5      to power 6
+3:      (degree 1)      X+1      to power 7
+4:      (degree 1)      X+2      to power 9
+5:      (degree 1)      X+3      to power 10
+6:      (degree 1)      X+4      to power 11
+7:      (degree 2)      X^2+5*X+2        to power 1
+8:      (degree 2)      X^2+4*X+5        to power 1
+9:      (degree 2)      X^2+2*X+2        to power 2
+10:     (degree 2)      X^2+3*X+5        to power 2
+
+New characteristic polynomial of T(P31b):
+Factors:
+1:      (degree 1)      X+6      to power 5
+2:      (degree 1)      X+5      to power 6
+3:      (degree 1)      X+1      to power 7
+4:      (degree 1)      X+2      to power 9
+5:      (degree 1)      X+3      to power 10
+6:      (degree 1)      X+4      to power 11
+7:      (degree 2)      X^2+5*X+2        to power 1
+8:      (degree 2)      X^2+4*X+5        to power 1
+9:      (degree 2)      X^2+2*X+2        to power 2
+10:     (degree 2)      X^2+3*X+5        to power 2
+
+New characteristic polynomial of T(P37a):
+Factors:
+1:      (degree 1)      X+2      to power 3
+2:      (degree 1)      X+4      to power 3
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+6      to power 6
+5:      (degree 1)      X+5      to power 12
+6:      (degree 1)      X+3      to power 18
+7:      (degree 2)      X^2+4*X+1        to power 3
+8:      (degree 2)      X^2+6*X+3        to power 3
+
+New characteristic polynomial of T(P37b):
+Factors:
+1:      (degree 1)      X+2      to power 3
+2:      (degree 1)      X+4      to power 3
+3:      (degree 1)      X        to power 6
+4:      (degree 1)      X+6      to power 6
+5:      (degree 1)      X+5      to power 12
+6:      (degree 1)      X+3      to power 18
+7:      (degree 2)      X^2+4*X+1        to power 3
+8:      (degree 2)      X^2+6*X+3        to power 3
+
+New characteristic polynomial of T(P43a):
+Factors:
+1:      (degree 1)      X        to power 3
+2:      (degree 1)      X+2      to power 3
+3:      (degree 1)      X+5      to power 3
+4:      (degree 1)      X+3      to power 6
+5:      (degree 1)      X+4      to power 6
+6:      (degree 1)      X+6      to power 12
+7:      (degree 1)      X+1      to power 15
+8:      (degree 2)      X^2+3*X+1        to power 1
+9:      (degree 2)      X^2+3*X+5        to power 1
+10:     (degree 2)      X^2+4*X+1        to power 2
+11:     (degree 2)      X^2+4*X+5        to power 2
+
+New characteristic polynomial of T(P43b):
+Factors:
+1:      (degree 1)      X        to power 3
+2:      (degree 1)      X+2      to power 3
+3:      (degree 1)      X+5      to power 3
+4:      (degree 1)      X+3      to power 6
+5:      (degree 1)      X+4      to power 6
+6:      (degree 1)      X+6      to power 12
+7:      (degree 1)      X+1      to power 15
+8:      (degree 2)      X^2+3*X+1        to power 1
+9:      (degree 2)      X^2+3*X+5        to power 1
+10:     (degree 2)      X^2+4*X+1        to power 2
+11:     (degree 2)      X^2+4*X+5        to power 2
+
+New characteristic polynomial of T(P61a):
+Factors:
+1:      (degree 1)      X+2      to power 3
+2:      (degree 1)      X+4      to power 3
+3:      (degree 1)      X+1      to power 6
+4:      (degree 1)      X+3      to power 6
+5:      (degree 1)      X+5      to power 6
+6:      (degree 1)      X+6      to power 9
+7:      (degree 1)      X        to power 15
+8:      (degree 2)      X^2+5*X+3        to power 3
+9:      (degree 2)      X^2+4*X+5        to power 3
+
+New characteristic polynomial of T(P61b):
+Factors:
+1:      (degree 1)      X+2      to power 3
+2:      (degree 1)      X+4      to power 3
+3:      (degree 1)      X+1      to power 6
+4:      (degree 1)      X+3      to power 6
+5:      (degree 1)      X+5      to power 6
+6:      (degree 1)      X+6      to power 9
+7:      (degree 1)      X        to power 15
+8:      (degree 2)      X^2+5*X+3        to power 3
+9:      (degree 2)      X^2+4*X+5        to power 3
+
