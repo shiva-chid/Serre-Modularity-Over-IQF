@@ -12,10 +12,10 @@ for coe in curves do
     unramchars, rootsofLpols1 := find_onedimchar(f,ell);
     Append(~NumberOfUnramifiedatellChars, #unramchars);
     Append(~out1,unramchars);
-    // ramchars, rootsofLpols2 := find_onedimchar(f,ell : ramified := true);
-    // Append(~NumberOfPossiblyramifiedatellChars, #ramchars);
-    // Append(~out2,ramchars);
-    // assert rootsofLpols1 eq rootsofLpols2;
+    ramchars, rootsofLpols2 := find_onedimchar(f,ell : ramified := true);
+    Append(~NumberOfPossiblyramifiedatellChars, #ramchars);
+    Append(~out2,ramchars);
+    assert rootsofLpols1 eq rootsofLpols2;
 end for;
 // sanity check: verifying that unramchars is a subset of ramchars
 assert &and[NumberOfUnramifiedatellChars[i] le NumberOfPossiblyramifiedatellChars[i] : i in [1..#curves]];
@@ -40,12 +40,14 @@ conds := [[* Conductor(x) : x in y *] : y in allchars];
 condgens := [[Eltseq(gen) where _,gen is IsPrincipal(x) : x in y] : y in conds];
 vals := [[[*<Eltseq(pp),Eltseq(K!(allchars[i][j](pp)))> : pp in primegens | not conds[i][j] subset pp*OF *] : j in [1..#allchars[i]]] : i in [1..#allchars]];
 // {*{*{#val[2] : val in x} : x in y*} : y in vals*};
-PrintFile("allcharsoutput.txt", "condgens := ");
-PrintFile("allcharsoutput.txt", condgens);
-PrintFile("allcharsoutput.txt", ";");
-PrintFile("allcharsoutput.txt", "vals := ");
-PrintFile("allcharsoutput.txt", vals);
-PrintFile("allcharsoutput.txt", ";");
+fil := "allcharsoutput.txt";
+fil1 := "allcharsoutput1.txt";
+PrintFile(fil, "condgens := ");
+PrintFile(fil, condgens);
+PrintFile(fil, ";");
+PrintFile(fil, "vals := ");
+PrintFile(fil, vals);
+PrintFile(fil, ";");
 
 /*
 to recover the characters from file

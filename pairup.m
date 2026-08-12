@@ -1,11 +1,12 @@
-intrinsic pairup(L :: List, ell :: RngIntElt : chi_ell := 0) -> List
+intrinsic pairup(L :: List, ell :: RngIntElt : chi_ell := 0) -> List, SeqEnum
 {Given a list containing an even number of Hecke characters valued in F_ell
 pair them up so that the product of each pair is the mod-ell cyclotomic character,
 and return the list of pairs, and their indices in the given list}
     require #L mod 2 eq 0 : "List must have even number of elements";
     if chi_ell cmpeq 0 then
-        F<zeta3> := CyclotomicField(3);
-        chi_ell, lambda := ModEllCyclotomicCharacter(F,ell);
+        // F<zeta3> := CyclotomicField(3);
+        F := NumberField(Order(Modulus(L[1])));
+        chi_ell, _ := ModEllCyclotomicCharacter(F,ell);
     end if;
 
     pairs := [**];
@@ -32,17 +33,53 @@ and return the list of pairs, and their indices in the given list}
 end intrinsic;
 
 
-intrinsic isconjugatethedual(epsilon :: GrpHeckeElt, ell :: RngIntElt : chi_ell := 0, lambda := 0, n := 100) -> BoolElt
+intrinsic pairupconjugate(L :: List, ell :: RngIntElt : n:=500) -> List, SeqEnum
+{Given a list of Hecke characters over a quadratic number field F valued in F_ell,
+pair them up as Galois conjugate pairs, and
+return the list of pairs, and their indices in the given list}
+    if #L eq 0 then return [**], []; end if;
+    F := NumberField(Order(Modulus(L[1])));
+    require Degree(F) eq 2 : "The characters must be over a quadratic number field";
+    pairs := [**];
+    pairindices := [];
+    doneindices := [];
+    firstnprimes := [p : p in PrimesUpTo(n) | not p in {3,ell}];
+    primesabove := [PrimeIdealsOverPrime(F,p) : p in firstnprimes];
+    for i in [1..#L] do
+        if i in doneindices then continue; end if;
+        chi1 := L[i];
+        for j in [i..#L] do
+            if j in doneindices then continue; end if;
+            chi2 := L[j];
+            if &and[[chi1(pp) : pp in x] eq [chi2(pp) : pp in Reverse(x)] : x in primesabove] then
+                Append(~pairs,<chi1,chi2>);
+                Append(~pairindices,<i,j>);
+                doneindices := doneindices cat [i,j];
+                continue i;
+            end if;
+        end for;
+        printf "Conjugate of %oth character in the list does not exist in the list.\n", i;
+        return false;
+    end for;
+    assert Set(doneindices) eq {1..#L};
+    return pairs, pairindices;
+end intrinsic;
+
+
+
+
+intrinsic isconjugatethedual(epsilon :: GrpHeckeElt, ell :: RngIntElt : chi_ell := 0, ellaboveK := 0, n := 100) -> BoolElt
 {for a Hecke character over a quadratic number field, returns whether its product with its Galois conjugate
 is equal to the mod-ell cyclotomic character chi_ell}
     modulus := Modulus(epsilon);
     OF := Order(modulus);
     F := NumberField(OF);
+    require Degree(F) eq 2 : "The characters must be over a quadratic number field";
     K := TargetRing(epsilon);
     if chi_ell cmpeq 0 then
-        chi_ell, lambda := ModEllCyclotomicCharacter(F,ell);
+        chi_ell, ellaboveK := ModEllCyclotomicCharacter(F,ell);
     end if;
-    Fell, OKtoFell := ResidueClassField(lambda);
+    Fell, OKtoFell := ResidueClassField(ellaboveK);
     
 
     firstnprimes := [p : p in PrimesUpTo(n) | not p in {3,ell}];

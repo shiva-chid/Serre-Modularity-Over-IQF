@@ -52,6 +52,29 @@ end for;
 [#x[2] : x in dat];
 // [ 6, 18, 18, 36, 36, 54, 6, 72, 18, 108]
 
-epsilon := dat[1][2][1];
-assert isconjugatethedual(epsilon,ell);
-assert isconjugatethedual(epsilon,ell : chi_ell := chi_ell, lambda := ellaboveK);
+for i := 1 to #dat do
+    for epsilon in dat[i][2] do
+        assert isconjugatethedual(epsilon,ell);
+        assert isconjugatethedual(epsilon,ell : chi_ell := chi_ell, ellaboveK := ellaboveK);
+    end for;
+end for;
+
+conds := [[Conductor(epsilon) : epsilon in x[2]] : x in dat];
+condsmod_lam12 := [[<y subset lam1, y subset lam2> : y in x] : x in conds];
+{* {* y : y in x *} : x in condsmod_lam12 *};
+/*
+{*
+{* <false, true>, <true, false>, <true, true>^^4 *}^^2,
+{* <false, true>^^3, <true, false>^^3, <true, true>^^12 *}^^3,
+{* <false, true>^^6, <true, false>^^6, <true, true>^^24 *}^^2,
+{* <false, true>^^9, <true, false>^^9, <true, true>^^36 *},
+{* <false, true>^^12, <true, false>^^12, <true, true>^^48 *},
+{* <false, true>^^18, <true, false>^^18, <true, true>^^72 *}
+*}
+*/
+
+/*
+These don't work well
+components1 := [[*Component(epsilon,lam1) : epsilon in x[2]*] : x in dat];
+components2 := [[*Component(epsilon,lam2) : epsilon in x[2]*] : x in dat];
+*/

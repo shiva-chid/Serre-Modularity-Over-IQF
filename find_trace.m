@@ -1,15 +1,17 @@
-
-intrinsic find_trace(g :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : charpols := [], primes_bound := 400, unramified := false) -> SeqEnum
+// uselambdacharpols := false, noskip := true, Hecke_stricteval := true
+intrinsic find_trace(f :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : radical_cond := 1, charpols := [], primes_bound := 500, ramified := true, useinertFrobsq := true) -> SeqEnum
 {returns list of traces and determinants of the two dimensional subrepresentation of the Galois group of K=Q(zeta_3) 
 in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) above various primes.}
     // From find_onedimchar
     SetColumns(0);
     Z := Integers();
     P_ell<T> := PolynomialRing(GF(ell));
-    f := suppressed_integer_quartic(g);
-    radical_cond := RadCond(f);
-    if not unramified then
+    f := suppressed_integer_quartic(f);
+    if radical_cond eq 1 then radical_cond := RadCond(f); end if;
+    if ramified then
         radical_cond := (radical_cond mod ell eq 0) select radical_cond else ell*radical_cond;
+    else
+        radical_cond := radical_cond div ell^Valuation(radical_cond,ell);
     end if;
     cond := radical_cond^4;
     F<zeta3> := CyclotomicField(3);
@@ -25,16 +27,17 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
     ellabove := PrimeIdealsOverPrime(K_targ,ell);
     OK_targ_modell, resmodell := ResidueClassField(OK_targ,ellabove[1]);
 
-
-    F_ell := GF(ell, 2);
-    if #charpols eq 0 then
+    if charpols eq [] then
         charpols := getcharpols(f : primesend := primes_bound);
     end if;
-
     // printf "Charpols found at primes:\n%o\n", [x[1] : x in charpols];
-    charpols := [x : x in charpols | x[1] mod 3 eq 1 and x[1] ne ell];
-    // printf "Throwing away ell and inert primes. Retained:\n%o\n", [x[1] : x in charpols];
-
+    if useinertFrobsq then
+        // using Bracket-2 of charpols at inert primes.
+        charpols := [(x[1] mod 3 eq 1) select x else <x[1],Bracket(2,x[2])> : x in charpols | x[1] ne 3 and x[1] ne ell];
+    else
+        charpols := [x : x in charpols | x[1] mod 3 eq 1 and x[1] ne ell];
+        // printf "Throwing away ell and inert primes. Retained:\n%o\n", [x[1] : x in charpols];
+    end if;
     charpolsmodell := [<x[1],P_ell ! x[2]> : x in charpols];
 
     primes := [x[1] : x in charpolsmodell];
@@ -77,8 +80,6 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
 
     //Method 2
     primes_dets_traces := [];
-    possible_traces_atp := [];
-    bad_primes :=[];
     for ind in [1..#charpolsmodell] do
         p := charpolsmodell[ind, 1];
 
@@ -87,7 +88,7 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         pabove := PrimeIdealsOverPrime(F, p);
         epsillon1_atpabove := resmodell(epsillon1(pabove[1]));
         det_atpabove := resmodell(det(pabove[1]));
-        pp := P_ell!p;
+        pp := P_ell!Norm(pabove[1]);
 
         charpol := charpolsmodell[ind, 2];
         charpolfacs := Roots(charpol, GF(ell, 2));
@@ -97,36 +98,26 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
  	            Append(~all_roots, r[1]);
             end for;
 	    end for;
+        assert #all_roots eq 6;
 
+        // print p, all_roots, epsillon1_atpabove, pp/epsillon1_atpabove;
         index := Index(all_roots, epsillon1_atpabove);
-	    if index ne 0 then
-	        Remove(~all_roots, index);
-	    end if;
+        assert index ne 0;
+        Remove(~all_roots, index);
         index := Index(all_roots, pp/epsillon1_atpabove);
-	    if index ne 0 then
-	        Remove(~all_roots, index);
-	    end if;
+        assert index ne 0;
+        Remove(~all_roots, index);
 
+        possible_traces_atp := {};
         for i in [1..(#all_roots-1)] do
             for j in [(i+1)..#all_roots] do
                 if all_roots[i]*all_roots[j] eq det_atpabove then
-                    Append(~possible_traces_atp, all_roots[i] + all_roots[j]);
+                    Include(~possible_traces_atp, all_roots[i] + all_roots[j]);
                 end if;
             end for;
         end for;
 
-        bad_prime := 0;
-        for i in [1..#possible_traces_atp] do
-            if possible_traces_atp[1] ne possible_traces_atp[i] then 
-                Append(~primes_dets_traces, <p, det_atpabove, possible_traces_atp[1], 1>);
-                bad_prime := 1;
-                break;
-            end if;
-        end for;
-        if bad_prime eq 0 then
-            Append(~primes_dets_traces, <p, det_atpabove, possible_traces_atp[1], 0>);
-        end if;
-        possible_traces_atp := [];
+        Append(~primes_dets_traces, <p, det_atpabove, Setseq(possible_traces_atp)>);
     end for;
 
     return primes_dets_traces;

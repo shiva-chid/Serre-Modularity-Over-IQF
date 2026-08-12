@@ -1,13 +1,43 @@
-intrinsic find_onedimchar(f :: RngUPolElt, ell :: RngIntElt : radical_cond := 1, primes_bound := 100, charpols := [], unramified := true, useinertFrobsq := true, Hecke_stricteval := false, uselambdacharpols := false) -> SeqEnum, SeqEnum
-{returns list of characters of the Galois group of K=Q(zeta_3) that can
+intrinsic getcharpols(f :: RngUPolElt : primesend := 500) -> SeqEnum
+{returns a sequence of tuples <p,charpol_p> where charpol_p is the characteristic polynomial
+of Frobenius at p on the Tate module of the Jacobian of the curve y^3=f, and p ranges over
+the good primes NthPrime(N) for all N within the given bounds.}
+    f := suppressed_integer_quartic(f);
+    P<x> := Parent(f);
+    N := Ceiling(Log(2,NthPrime(primesend)));
+    Nstr := IntegerToString(N);
+    fstr := &cat(Split(Sprint(f)," *"));
+    filename := Sprintf("temp_%o", Getpid());
+    _ := System("./hwlpolys y^3=" cat fstr cat " " cat Nstr cat " 1 0 -1 0 " cat filename);
+    fil := Open(filename, "r");
+    C := Coefficients(f)[1..3];
+    Lpols := liftLpolys(fil,C);
+    delete(fil);
+    System("rm " cat filename);
+    charpols := [<x[1],P!Reverse(x[2])> : x in Lpols];
+    return charpols;
+end intrinsic;
+
+intrinsic Bracket(r :: RngIntElt, f :: RngUPolElt) -> RngUPolElt
+{Given a positive integer r, and a polynomial f, returns the polynomial whose roots are the r-th powers
+of the roots of f.}
+    P<x> := Parent(f);
+    P2<y> := PolynomialRing(P);
+    return Resultant(P2 ! Coefficients(f), x-y^r);
+end intrinsic;
+
+intrinsic find_onedimchar(f :: RngUPolElt, ell :: RngIntElt : radical_cond := 1, primes_bound := 500, charpols := [], ramified := false, useinertFrobsq := true, uselambdacharpols := false, noskip := true, Hecke_stricteval := true) -> SeqEnum, SeqEnum
+{returns list of possible characters of the Galois group of K=Q(zeta_3) that can
 possibly occur in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x).}
     SetColumns(0);
     Z := Integers();
     P_ell<T> := PolynomialRing(GF(ell));
     f := suppressed_integer_quartic(f);
     if radical_cond eq 1 then radical_cond := RadCond(f); end if;
-    if not unramified then
+    if ramified then
         radical_cond := (radical_cond mod ell eq 0) select radical_cond else ell*radical_cond;
+    else
+        radical_cond := radical_cond div ell^Valuation(radical_cond,ell);
     end if;
     cond := radical_cond^4;
     F<zeta3> := CyclotomicField(3);
@@ -37,20 +67,16 @@ possibly occur in the mod-ell Galois representation of the Jacobian of the curve
     if charpols eq [] then
         charpols := getcharpols(f : primesend := primes_bound);
     end if;
-    //printf "Charpols found at primes:\n%o\n", [x[1] : x in charpols];
+//    print [x[1] : x in charpols];
     if useinertFrobsq then
         // using Bracket-2 of charpols at inert primes.
         charpols := [(x[1] mod 3 eq 1) select x else <x[1],Bracket(2,x[2])> : x in charpols | x[1] ne 3 and x[1] ne ell];
     else
         charpols := [x : x in charpols | x[1] mod 3 eq 1 and x[1] ne ell];
     end if;
-    //printf "Throwing away ell, and possibly inert primes. Retained:\n%o\n", [x[1] : x in charpols];
-/*
-    if unramified then
-        charpols := [x : x in charpols | x[1] mod ell eq 1];
-    end if;
-    printf "if looking for the unramified-at-ell character, only retaining primes = 1 mod ell\n%o\n", [x[1] : x in charpols];
-*/
+//    print [x[1] : x in charpols];
+//    if not ramified then charpols := [x : x in charpols | x[1] mod ell eq 1]; end if;
+//    print [x[1] : x in charpols];
     if uselambdacharpols cmpne false then
         resF1_pol := hom<P_F->P_ell|resF1,T>;
         charpolsfacs := [<x[1],Factorisation(ChangeRing(x[2],OF))> : x in charpols];
@@ -68,14 +94,14 @@ possibly occur in the mod-ell Galois representation of the Jacobian of the curve
         charpolsmodell := [<x[1],P_ell ! x[2]> : x in charpols];
     end if;
     primes := [x[1] : x in charpolsmodell];
-    // printf "\nUsing L-polynomials at the (ordinary) primes\n%o\n\n", primes;
+    printf "\nUsing L-polynomials at the (ordinary) primes\n%o\n\n", primes;
 //    print charpolsmodell;
 
-    gens_G := Setseq(Generators(G));
+    gens_G := SetToSequence(Generators(G));
     n := #gens_G;
     exps_G := [Order(chi) : chi in gens_G];
     conds_G := [Conductor(chi) : chi in gens_G];
-    // printf "Orders of the characters generating the Hecke character group:\n%o\n", exps_G;
+    printf "Orders of the characters generating the Hecke character group:\n%o\n", exps_G;
 //    printf "Orders and conductors of the characters generating the Hecke character group:\n%o\n%o\n", exps_G, conds_G;
 
     X := Set(CartesianProduct([[0..e-1] : e in exps_G]));
@@ -83,13 +109,13 @@ possibly occur in the mod-ell Galois representation of the Jacobian of the curve
 it's enough to test only chi or chi^-1.
     X := Set(CartesianProduct([[0..((exps_G[1]-1) div 2)]] cat [[0..e-1] : e in exps_G[2..#exps_G]])); // could be improved
 */
-    ind := 5;
+    ind := 1;
     prime_ideals := [];
     number_linearfacs := 6;
     all_roots_charpolsmodell := [];
-    while #X gt 2 do
+    while #X gt 0 do
         if ind gt #charpolsmodell then
-            // printf "Checked %o primes, up to %o\n", #charpolsmodell, charpolsmodell[#charpolsmodell];
+            printf "Checked %o primes, up to %o\n", #charpolsmodell, charpolsmodell[#charpolsmodell];
             break;
         end if;
         p := charpolsmodell[ind,1];
@@ -104,19 +130,22 @@ it's enough to test only chi or chi^-1.
         end if;
         Append(~all_roots_charpolsmodell, <p,&join[{*r[1] : i in [1..r[2]]*} : r in roots_charpol]>);
         eigvals_rhoell_frobp := [r[1] : r in roots_charpol];
-        // printf "Charpol at p=%o has roots %o over F_%o\n", p, roots_charpol, ell;
+        printf "Charpol at p=%o has roots %o over F_%o\n", p, roots_charpol, ell;
         gens_evalsatpabove := [[resmodell((gens_G[i])(frakp)) : i in [1..n]] : frakp in pabove];
 // Inefficient earlier attempts
 //        Xnew := [x : x in X | incl2(isom((&*[(gens_G[i])^(x[i]) : i in [1..n]])(pabove[1])@@incl1)) in eigvals_rhoell_frobp];
 //        Xnew := [x : x in X | resmodell((&*[(gens_G[i])^(x[i]) : i in [1..n]])(pabove[1])) in eigvals_rhoell_frobp];
 //        Xnew := [x : x in X | resmodell((&*[(gens_G[i])^(x[i]) : i in [1..n]])(pabove[1])) in eigvals_rhoell_frobp or resmodell((&*[(gens_G[i])^(x[i]) : i in [1..n]])(pabove[2])) in eigvals_rhoell_frobp];
         if Hecke_stricteval then
-            X := [x : x in X | &*[gens_evalsatpabove[1][i]^(x[i]) : i in [1..n]] in eigvals_rhoell_frobp];
+            Xnew := [x : x in X | &*[gens_evalsatpabove[1][i]^(x[i]) : i in [1..n]] in eigvals_rhoell_frobp];
         else
-            X := [x : x in X | &or[&*[gens_evalsatfrakp[i]^(x[i]) : i in [1..n]] in eigvals_rhoell_frobp : gens_evalsatfrakp in gens_evalsatpabove]];
+            Xnew := [x : x in X | &or[&*[gens_evalsatfrakp[i]^(x[i]) : i in [1..n]] in eigvals_rhoell_frobp : gens_evalsatfrakp in gens_evalsatpabove]];
         end if;
-        number_linearfacs := Minimum(number_linearfacs,&+([] cat [r[2] : r in roots_charpol]));
-        // print p, #X;
+        if noskip or Xnew ne [] then
+            X := Xnew;
+            number_linearfacs := Minimum(number_linearfacs,&+([] cat [r[2] : r in roots_charpol]));
+        end if;
+        print p, #X;
         ind := ind+1;
     end while;
 
@@ -132,57 +161,6 @@ it's enough to test only chi or chi^-1.
         end for;
         Append(~X_chars_values,rec<RF | char := chi, values_modell := chi_values_modell>);
     end for;
-
-
-// Previous Attempt
-
-/*
-    if #X_chars_values eq 6 then
-        
-        chars := X_chars_values;
-        conductor1_list := [];
-        conductor2_list := [];
-        conductor3_list := [];
-        charconductor := Conductor(chars[1]`char);
-        Append(~conductor1_list, chars[1]);
-        for i in [2..#chars] do
-            if Conductor(chars[i]`char) eq charconductor then
-                Append(~conductor1_list, chars[i]);
-            else Append(~conductor2_list, chars[i]); end if;
-        end for;
-        if #conductor1_list eq 2 then
-            X_chars_values := conductor1_list;
-        else 
-           if #conductor2_list eq 2 then X_chars_values := conductor2_list;
-           end if;
-        end if;
-    end if;
-
-
-
-
-    if #X_chars_values gt 0 then
-        new_chars_list := [];
-        for i in [1..#X_chars_values] do
-            for j in [1..#X_chars_values] do
-                if i cmpne j then
-                    if Conductor(X_chars_values[i]`char) eq Conductor(X_chars_values[j]`char) then
-                        Append(~new_chars_list, X_chars_values[i]);
-                        break;
-                    end if;
-                end if;
-            end for;
-        end for;  
-
-        if #new_chars_list gt 0 then
-            X_chars_values := new_chars_list;
-        end if;          
-    end if;
-
-*/
-    
-
-
 /*
     if #X_chars gt number_linearfacs then
         ps := [x[1] : x in charpolsmodell];
@@ -204,9 +182,8 @@ it's enough to test only chi or chi^-1.
             print ps[i], roots_charpolsmodell[i];
         end for;
 */
-    // printf "Based on the L-polynomials at ORDINARY primes, only the following characters COULD appear as subquotients of rhobar_%o:\n", ell;
-    // printf "Found %o potential characters. Every Lpoly (factor) used has at least %o linear factors over F_%o.\n", #X_chars, number_linearfacs, ell;
-
+    printf "Based on the L-polynomials at ORDINARY primes, only the following characters COULD appear as subquotients of rhobar_%o:\n", ell;
+    printf "Found %o potential characters. Every Lpoly (factor) used has at least %o linear factors over F_%o.\n", #X_chars, number_linearfacs, ell;
 /*
     if number_linearfacs eq 2 and #X_chars eq 4 then
         prod_all_chars := X_chars[1]*X_chars[2]*X_chars[3]*X_chars[4];
@@ -222,13 +199,9 @@ it's enough to test only chi or chi^-1.
         printf "The product of a dual-pair of characters appearing in rhobar_%o is the mod-%o cyclotomic character. Pairing up the characters that could appear, using this fact.\n", ell, ell;
         X_chars_values := X_chars_values_new;
     end if;
-    
 */
     return X_chars_values, all_roots_charpolsmodell;
 end intrinsic;
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Example: Finding the 1-dim subquotient reps of \ell-torsion representation of the Jacobian of a Picard curve   //
@@ -289,4 +262,3 @@ Number Field with defining polynomial x^12 + 27*x^10 - 18*x^9 + 306*x^8 - 18*x^7
 ]
 //
 */
-

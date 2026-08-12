@@ -413,7 +413,7 @@ for> end for;
 > allconjdualinds := [];
 > for i := 1 to #allchars do
 for>     conjdualinds := [j : j in [1..#allchars[i]] | isconjugatethedual(allchars[i][j],ell : chi_ell := \
-chi_ell, lambda := ellaboveK)];
+chi_ell, ellaboveK := ellaboveK)];
 for>     Append(~allconjdualinds,conjdualinds);
 for> end for;
 > {* #x : x in allconjdualinds *};

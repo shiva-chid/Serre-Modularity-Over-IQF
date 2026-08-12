@@ -1,0 +1,12 @@
+{
+    basic_utils.m
+    find_onedimchar.m
+    find_twodimchar.m
+    Lpolys.m
+    ModEllCyclotomicCharacter.m
+    pairup.m
+    CompatibleSubsetsOfChars.m
+    PicardConductor.m
+    find_determinant.m
+    find_trace.m
+}
