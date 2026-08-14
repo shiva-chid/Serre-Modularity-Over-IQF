@@ -1,7 +1,7 @@
-// uselambdacharpols := false, noskip := true, Hecke_stricteval := true
-intrinsic find_trace(f :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : radical_cond := 1, charpols := [], primes_bound := 500, ramified := true, useinertFrobsq := true) -> SeqEnum
-{returns list of traces and determinants of the two dimensional subrepresentation of the Galois group of K=Q(zeta_3) 
-in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) above various primes.}
+intrinsic find_trace(f :: RngUPolElt, ell :: RngIntElt, epsilon :: GrpHeckeElt, det :: GrpHeckeElt : radical_cond := 1, charpols := [], primes_bound := 500, ramified := true, useinertFrobsq := true) -> SeqEnum
+{returns list of traces and determinants above various primes of a 2-dimensional subquotient 
+representation of the Galois group of K=Q(zeta_3) in the mod-ell Galois representation of the 
+Jacobian of the curve y^3 = f(x).}
     // From find_onedimchar
     SetColumns(0);
     Z := Integers();
@@ -61,16 +61,15 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         if cond mod p eq 0 then continue; end if;
 
         pabove := PrimeIdealsOverPrime(F, p);
-        epsillon1_atpabove := resmodell(onedimchar(pabove[1]));
+        epsilon_atpabove := resmodell(epsilon(pabove[1]));
         det_atpabove := resmodell(det(pabove[1]));
-        pp := P_ell!p;
+        pp := P_ell!Norm(pabove[1]);
         charpol := charpolsmodell[ind, 2];
-        pabove := PrimeIdealsOverPrime(F, p);
         coeff := Coefficient(charpol, 5);
         denom := 1 + pp * det_atpabove^-1;
         if denom ne 0 then
-            trace := -(coeff + epsillon1_atpabove + p * epsillon1_atpabove^-1)/denom;
-            Append(~primes_dets_traces, <p, det_atpabove, trace>);
+            trace := -(coeff + epsilon_atpabove + pp * epsilon_atpabove^-1)/denom;
+            Append(~primes_dets_traces, <p, det_atpabove, [trace, pp * det_atpabove^-1 * trace]>);
         else
             Append(~primes_dets_traces, <p, det_atpabove, "no trace">)
         end if;
@@ -86,7 +85,7 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         if cond mod p eq 0 then continue; end if;
   
         pabove := PrimeIdealsOverPrime(F, p);
-        epsillon1_atpabove := resmodell(epsillon1(pabove[1]));
+        epsilon_atpabove := resmodell(epsilon(pabove[1]));
         det_atpabove := resmodell(det(pabove[1]));
         pp := P_ell!Norm(pabove[1]);
 
@@ -100,11 +99,11 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
 	    end for;
         assert #all_roots eq 6;
 
-        // print p, all_roots, epsillon1_atpabove, pp/epsillon1_atpabove;
-        index := Index(all_roots, epsillon1_atpabove);
+        // print p, all_roots, epsilon_atpabove, pp/epsilon_atpabove;
+        index := Index(all_roots, epsilon_atpabove);
         assert index ne 0;
         Remove(~all_roots, index);
-        index := Index(all_roots, pp/epsillon1_atpabove);
+        index := Index(all_roots, pp/epsilon_atpabove);
         assert index ne 0;
         Remove(~all_roots, index);
 

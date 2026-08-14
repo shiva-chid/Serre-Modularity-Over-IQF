@@ -1,5 +1,5 @@
 
-intrinsic find_trace(g :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt, det :: GrpHeckeElt : primes_bound := 400, unramified := false) -> SeqEnum
+intrinsic find_trace(g :: RngUPolElt, ell :: RngIntElt, epsilon :: GrpHeckeElt, det :: GrpHeckeElt : primes_bound := 400, unramified := false) -> SeqEnum
 {returns list of traces and determinants of the two dimensional subrepresentation of the Galois group of K=Q(zeta_3) 
 in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) above various primes.}
     // From find_onedimchar
@@ -56,7 +56,7 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         if cond mod p eq 0 then continue; end if;
 
         pabove := PrimeIdealsOverPrime(F, p);
-        epsillon1_atpabove := resmodell(onedimchar(pabove[1]));
+        epsilon_atpabove := resmodell(onedimchar(pabove[1]));
         det_atpabove := resmodell(det(pabove[1]));
         pp := P_ell!p;
         charpol := charpolsmodell[ind, 2];
@@ -64,7 +64,7 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         coeff := Coefficient(charpol, 5);
         denom := 1 + pp * det_atpabove^-1;
         if denom ne 0 then
-            trace := -(coeff + epsillon1_atpabove + p * epsillon1_atpabove^-1)/denom;
+            trace := -(coeff + epsilon_atpabove + p * epsilon_atpabove^-1)/denom;
             Append(~primes_dets_traces, <p, det_atpabove, trace>);
         else
             Append(~primes_dets_traces, <p, det_atpabove, "no trace">)
@@ -83,7 +83,7 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
         if cond mod p eq 0 then continue; end if;
   
         pabove := PrimeIdealsOverPrime(F, p);
-        epsillon1_atpabove := resmodell(epsillon1(pabove[1]));
+        epsilon_atpabove := resmodell(epsilon(pabove[1]));
         det_atpabove := resmodell(det(pabove[1]));
         pp := P_ell!p;
 
@@ -96,11 +96,11 @@ in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x) abo
             end for;
 	    end for;
 
-        index := Index(all_roots, epsillon1_atpabove);
+        index := Index(all_roots, epsilon_atpabove);
 	    if index ne 0 then
 	        Remove(~all_roots, index);
 	    end if;
-        index := Index(all_roots, pp/epsillon1_atpabove);
+        index := Index(all_roots, pp/epsilon_atpabove);
 	    if index ne 0 then
 	        Remove(~all_roots, index);
 	    end if;

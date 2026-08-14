@@ -1,0 +1,2012 @@
+> 
+> load "nonsurj7.txt";
+Loading "nonsurj7.txt"
+> load "allcharsoutput.txt";
+Loading "allcharsoutput.txt"
+> assert {#curves,#conds,#condgens_prunedchars,#\
+vals_prunedchars,#allpossiblesubsetsofchars} eq \
+{381};
+> assert {#condgens,#vals,#Allpossiblesubsetsofc\
+hars} eq {381};
+> 
+> AttachSpec("spec");
+> L := Allpossiblesubsetsofchars;
+> {* #L[i] : i in [1..#L] *};
+{* 1^^352, 2, 3^^28 *}
+> {* {* {* <#z[1],z[2]> : z in y *} : y in L[i] \
+*} : i in [1..#L] *};
+{*
+{*
+{* <2, 0>, <2, 1>, <4, 0> *}^^2
+*},
+{*
+{* <2, 0>, <4, 1> *},
+{* <2, 1>, <4, 0> *},
+{* <2, 1>, <4, 1> *}
+*}^^28,
+{*
+{* <2, 1>, <4, 0> *}
+*}^^352
+*}
+> 
+> ell := 7;
+> F<zeta3> := CyclotomicField(3);
+> OF := RingOfIntegers(F);
+> errorinds := [];
+> dat := [];
+> for i in [1..#L] do
+for>     try
+for|try>         charconds := condgens[i];
+for|try>         goodcharpossibilities := [&join\
+[ {*x^^block[2] : x in block[1]*} : block in opt\
+ion] : option in L[i]];
+for|try>         goodcharpossibilities := [x : x\
+ in goodcharpossibilities | #x in {2,6}];
+for|try>         goodcharcondpossibilities := [{\
+* ((F!charconds[ii])*OF)^^Multiplicity(x,ii) : i\
+i in Set(x) *} : x in goodcharpossibilities];
+for|try>         Append(~dat,goodcharcondpossibi\
+lities);
+for|try>         printf "%o:%o\n", i, &cat[s : s\
+ in Split(Sprint(goodcharcondpossibilities),"\n"\
+)];
+for|try>     catch e;
+for|try>         // print e;
+for|try>         // break;
+for|try>         // print i;
+for|try>         Append(~errorinds,i);
+for|try>     end try;
+for> end for;
+1:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+2:[{*Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*}]
+3:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+4:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+5:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+6:[{*Principal Ideal of OFGenerator:[-20, -4],Principal Ideal of OFGenerator:[4, 20]*}]
+7:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+8:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+9:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+10:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+11:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+12:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+13:[{*Principal Ideal of OFGenerator:[24, 36],Principal Ideal of OFGenerator:[-24, 12]*}]
+14:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+15:[{*Principal Ideal of OFGenerator:[140, -140]^^2*}]
+16:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+17:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+18:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+19:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+20:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+21:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+22:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+23:[{*Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*}]
+24:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+25:[{*Principal Ideal of OFGenerator:[24, 36],Principal Ideal of OFGenerator:[-24, 12]*},{*Principal Ideal of OFGenerator:[0, -84]^^2,Principal Ideal of OFGenerator:[24, 36]^^2,Principal Ideal of OFGenerator:[-24, 12]^^2*}]
+26:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+27:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+28:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+29:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+30:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+31:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+32:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+33:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+34:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+35:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+36:[{*Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*}]
+37:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+38:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+39:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+40:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+41:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+42:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+43:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+44:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+45:[{*Principal Ideal of OFGenerator:[24, 36],Principal Ideal of OFGenerator:[-24, 12]*}]
+46:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+47:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+48:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+49:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+50:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+51:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+52:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+53:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+54:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+55:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+56:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+57:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+58:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+59:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+60:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+61:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+62:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+63:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+64:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+65:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+66:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+67:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+68:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+69:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+70:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+71:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+72:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+73:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+74:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+75:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+76:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+77:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+78:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+79:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+80:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+81:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+82:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+83:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+84:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+85:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+86:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+87:[{*Principal Ideal of OFGenerator:[14, -14]^^2*},{*Principal Ideal of OFGenerator:[1, 0]^^2,Principal Ideal of OFGenerator:[7, 0]^^2,Principal Ideal of OFGenerator:[14, -14]^^2*}]
+88:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+89:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+90:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+91:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+92:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+93:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+94:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+95:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+96:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+97:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+98:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+99:[{*Principal Ideal of OFGenerator:[14, -14]^^2*}]
+100:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+101:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+102:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+103:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+104:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*},{*Principal Ideal of OFGenerator:[-6, 24],Principal Ideal of OFGenerator:[-42, -84]^^2,Principal Ideal of OFGenerator:[30, 24],Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+105:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+106:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+107:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+108:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+109:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+110:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+111:[{*Principal Ideal of OFGenerator:[0, -84]^^2*}]
+112:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+113:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+114:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+115:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+116:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+117:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+118:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+119:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+120:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+121:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+122:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+123:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+124:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+125:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+126:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+127:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+128:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+129:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+130:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+131:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+132:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+133:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+134:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+135:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+136:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+137:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+138:[{*Principal Ideal of OFGenerator:[24, 36],Principal Ideal of OFGenerator:[-24, 12]*},{*Principal Ideal of OFGenerator:[0, -84]^^2,Principal Ideal of OFGenerator:[24, 36]^^2,Principal Ideal of OFGenerator:[-24, 12]^^2*}]
+139:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+140:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+141:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+142:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+143:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+144:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+145:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+146:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+147:[{*Principal Ideal of OFGenerator:[6, 9],Principal Ideal of OFGenerator:[-6, 3]*}]
+148:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+149:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+150:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+151:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+152:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+153:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+154:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+155:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+156:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+157:[{*Principal Ideal of OFGenerator:[140, -140]^^2*}]
+158:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+159:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+160:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+161:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+162:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+163:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+164:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+165:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+166:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+167:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+168:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+169:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*},{*Principal Ideal of OFGenerator:[-3, 12],Principal Ideal of OFGenerator:[-21, -42]^^2,Principal Ideal of OFGenerator:[15, 12],Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+170:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+171:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+172:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+173:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+174:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+175:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+176:[{*Principal Ideal of OFGenerator:[-50, -10],Principal Ideal of OFGenerator:[10, 50]*}]
+177:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+178:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+179:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+180:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+181:[{*Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*}]
+182:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+183:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+184:[{*Principal Ideal of OFGenerator:[-20, -4],Principal Ideal of OFGenerator:[4, 20]*},{*Principal Ideal of OFGenerator:[28, 0]^^2,Principal Ideal of OFGenerator:[-4, 8],Principal Ideal of OFGenerator:[-12, -8],Principal Ideal of OFGenerator:[-20, -4],Principal Ideal of OFGenerator:[4, 20]*}]
+185:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+186:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+187:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+188:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+189:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+190:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+191:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+192:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+193:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+194:[{*Principal Ideal of OFGenerator:[0, -21]^^2*},{*Principal Ideal of OFGenerator:[0, -6]^^2,Principal Ideal of OFGenerator:[0, -21]^^2,Principal Ideal of OFGenerator:[0, -42]^^2*}]
+195:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+196:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+197:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+198:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+199:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+200:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*},{*Principal Ideal of OFGenerator:[-252, -252]^^2,Principal Ideal of OFGenerator:[108, 36]^^2,Principal Ideal of OFGenerator:[36, 108]^^2*}]
+201:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+202:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+203:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+204:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+205:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+206:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+207:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*},{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+208:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+209:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*},{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15],Principal Ideal of OFGenerator:[-126, -126]^^2,Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+210:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+211:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+212:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+213:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+214:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+215:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+216:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+217:[{*Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*},{*Principal Ideal of OFGenerator:[140, 0]^^2,Principal Ideal of OFGenerator:[-20, 40],Principal Ideal of OFGenerator:[-60, -40],Principal Ideal of OFGenerator:[-100, -20],Principal Ideal of OFGenerator:[20, 100]*}]
+218:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+219:[{*Principal Ideal of OFGenerator:[140, -140]^^2*}]
+220:[{*Principal Ideal of OFGenerator:[0, -84]^^2*}]
+221:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+222:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+223:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+224:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+225:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+226:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+227:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+228:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+229:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+230:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+231:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+232:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+233:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+234:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+235:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+236:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+237:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+238:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*},{*Principal Ideal of OFGenerator:[-9, -9]^^2,Principal Ideal of OFGenerator:[-63, -63]^^2,Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+239:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+240:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+241:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+242:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*},{*Principal Ideal of OFGenerator:[-6, 24],Principal Ideal of OFGenerator:[-42, -84]^^2,Principal Ideal of OFGenerator:[30, 24],Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+243:[{*Principal Ideal of OFGenerator:[-10, -2],Principal Ideal of OFGenerator:[2, 10]*}]
+244:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+245:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+246:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+247:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+248:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*},{*Principal Ideal of OFGenerator:[-252, -252]^^2,Principal Ideal of OFGenerator:[108, 36]^^2,Principal Ideal of OFGenerator:[36, 108]^^2*}]
+249:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+250:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+251:[{*Principal Ideal of OFGenerator:[-50, -10],Principal Ideal of OFGenerator:[10, 50]*}]
+252:[{*Principal Ideal of OFGenerator:[14, -14]^^2*}]
+253:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+254:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+255:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+256:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+257:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+258:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+259:[{*Principal Ideal of OFGenerator:[70, -70]^^2*}]
+260:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+261:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+262:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*},{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27],Principal Ideal of OFGenerator:[-30, 120],Principal Ideal of OFGenerator:[-210, -420]^^2,Principal Ideal of OFGenerator:[150, 120]*}]
+263:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+264:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+265:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+266:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+267:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+268:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+269:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+270:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+271:[{*Principal Ideal of OFGenerator:[-252, -252]^^2*}]
+272:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+273:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*},{*Principal Ideal of OFGenerator:[-6, 24],Principal Ideal of OFGenerator:[-42, -84]^^2,Principal Ideal of OFGenerator:[30, 24],Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+274:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+275:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+276:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+277:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+278:[{*Principal Ideal of OFGenerator:[-50, -10],Principal Ideal of OFGenerator:[10, 50]*},{*Principal Ideal of OFGenerator:[-63, -63]^^2,Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27],Principal Ideal of OFGenerator:[-50, -10],Principal Ideal of OFGenerator:[10, 50]*}]
+279:[{*Principal Ideal of OFGenerator:[0, -42]^^2*},{*Principal Ideal of OFGenerator:[0, -6]^^2,Principal Ideal of OFGenerator:[0, -42]^^4*}]
+280:[{*Principal Ideal of OFGenerator:[140, -140]^^2*}]
+281:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+282:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+283:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+284:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+285:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+286:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+287:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+288:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+289:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+290:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+291:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*}]
+292:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+293:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+294:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+295:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+296:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+297:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+298:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+299:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+300:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+301:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+302:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+303:[{*Principal Ideal of OFGenerator:[-25, -5],Principal Ideal of OFGenerator:[5, 25]*}]
+304:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+305:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+306:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+307:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+308:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+309:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+310:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+311:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+312:[{*Principal Ideal of OFGenerator:[28, -28]^^2*}]
+313:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+314:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+315:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+316:[{*Principal Ideal of OFGenerator:[14, -14]^^2*}]
+317:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+318:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*},{*Principal Ideal of OFGenerator:[-126, -126]^^2,Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54],Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+319:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+320:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+321:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+322:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+323:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+324:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+325:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+326:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+327:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+328:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+329:[{*Principal Ideal of OFGenerator:[120, 180],Principal Ideal of OFGenerator:[-120, 60]*},{*Principal Ideal of OFGenerator:[0, -420]^^2,Principal Ideal of OFGenerator:[120, 180]^^2,Principal Ideal of OFGenerator:[-120, 60]^^2*}]
+330:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+331:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*},{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54],Principal Ideal of OFGenerator:[-15, 60],Principal Ideal of OFGenerator:[-105, -210]^^2,Principal Ideal of OFGenerator:[75, 60]*}]
+332:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+333:[{*Principal Ideal of OFGenerator:[0, -210]^^2*},{*Principal Ideal of OFGenerator:[0, -15]^^2,Principal Ideal of OFGenerator:[0, -105]^^2,Principal Ideal of OFGenerator:[0, -210]^^2*}]
+334:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+335:[{*Principal Ideal of OFGenerator:[14, -14]^^2*}]
+336:[{*Principal Ideal of OFGenerator:[0, -84]^^2*},{*Principal Ideal of OFGenerator:[0, -84]^^4,Principal Ideal of OFGenerator:[24, 36],Principal Ideal of OFGenerator:[-24, 12]*}]
+337:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+338:[{*Principal Ideal of OFGenerator:[0, -21]^^2*}]
+339:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+340:[{*Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+341:[{*Principal Ideal of OFGenerator:[140, -140]^^2*}]
+342:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+343:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*}]
+344:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+345:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+346:[{*Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27]*}]
+347:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+348:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+349:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*},{*Principal Ideal of OFGenerator:[-18, -18]^^2,Principal Ideal of OFGenerator:[-63, -63]^^2,Principal Ideal of OFGenerator:[-126, -126]^^2*}]
+350:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*},{*Principal Ideal of OFGenerator:[-3, 12],Principal Ideal of OFGenerator:[-21, -42]^^2,Principal Ideal of OFGenerator:[15, 12],Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+351:[{*Principal Ideal of OFGenerator:[108, 36],Principal Ideal of OFGenerator:[36, 108]*},{*Principal Ideal of OFGenerator:[-252, -252]^^2,Principal Ideal of OFGenerator:[108, 36]^^2,Principal Ideal of OFGenerator:[36, 108]^^2*}]
+352:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+353:[{*Principal Ideal of OFGenerator:[60, 90],Principal Ideal of OFGenerator:[-60, 30]*}]
+354:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+355:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+356:[{*Principal Ideal of OFGenerator:[70, -70]^^2*}]
+357:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*},{*Principal Ideal of OFGenerator:[-63, -63]^^2,Principal Ideal of OFGenerator:[27, 9],Principal Ideal of OFGenerator:[9, 27],Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+358:[{*Principal Ideal of OFGenerator:[540, 180],Principal Ideal of OFGenerator:[180, 540]*}]
+359:[{*Principal Ideal of OFGenerator:[35, -35]^^2*}]
+360:[{*Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*},{*Principal Ideal of OFGenerator:[0, -21]^^4,Principal Ideal of OFGenerator:[12, 18],Principal Ideal of OFGenerator:[-12, 6]*}]
+361:[{*Principal Ideal of OFGenerator:[0, -420]^^2*}]
+362:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+363:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+364:[{*Principal Ideal of OFGenerator:[-315, -315]^^2*}]
+365:[{*Principal Ideal of OFGenerator:[54, 18],Principal Ideal of OFGenerator:[18, 54]*}]
+366:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+367:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+368:[{*Principal Ideal of OFGenerator:[-1260, -1260]^^2*}]
+369:[{*Principal Ideal of OFGenerator:[14, -14]^^2*}]
+370:[{*Principal Ideal of OFGenerator:[28, -28]^^2*},{*Principal Ideal of OFGenerator:[28, 0]^^2,Principal Ideal of OFGenerator:[-4, 8],Principal Ideal of OFGenerator:[-12, -8],Principal Ideal of OFGenerator:[28, -28]^^2*}]
+371:[{*Principal Ideal of OFGenerator:[135, 45],Principal Ideal of OFGenerator:[45, 135]*}]
+372:[{*Principal Ideal of OFGenerator:[70, -70]^^2*}]
+373:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+374:[{*Principal Ideal of OFGenerator:[-63, -63]^^2*}]
+375:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+376:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+377:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+378:[{*Principal Ideal of OFGenerator:[270, 90],Principal Ideal of OFGenerator:[90, 270]*}]
+379:[{*Principal Ideal of OFGenerator:[-630, -630]^^2*}]
+380:[{*Principal Ideal of OFGenerator:[30, 45],Principal Ideal of OFGenerator:[-30, 15]*}]
+381:[{*Principal Ideal of OFGenerator:[0, -42]^^2*}]
+> assert #errorinds eq 0;
+> 
+> {*{*#y : y in x*} : x in dat*};
+{*
+{* 2 *}^^352,
+{* 2, 6 *}^^28,
+{* 2^^2 *}
+*}
+> 
+> AutF, auts, tau := AutomorphismGroup(F);
+> assert Order(AutF.1) eq 2; sigma := tau(AutF.1\
+);
+> condpairs_decomp := [];
+> for i := 1 to #dat do
+for>     condpair_decomp := [];
+for>     for j := 1 to #dat[i] do
+for|for>         if #dat[i][j] ne 2 then continu\
+e; end if;
+for|for>         condpair := MultisetToSequence(\
+dat[i][j]);
+for|for>         assert sigma(condpair[1]) eq co\
+ndpair[2];
+for|for>         g := &+(condpair);
+for|for>         condpair_rempart := [x/g : x in\
+ condpair];
+for|for>         assert &and[nxg eq ell^Valuatio\
+n(nxg,ell) where nxg is Norm(xibyg) : xibyg in c\
+ondpair_rempart]; // remaining part is ell part
+for|for>         x1byg, x2byg := Explode(condpai\
+r_rempart);
+for|for>         Append(~condpair_decomp,<g,x1by\
+g,x2byg>);
+for|for>     end for;
+for>     Append(~condpairs_decomp,condpair_decom\
+p);
+for> end for;
+> #condpairs_decomp;
+381
+> {* #x : x in condpairs_decomp *};
+{* 1^^380, 2 *}
+> 
+> ZZ := Integers();
+> combinedcondofcharpairs := [[y[1]^2 : y in x] \
+: x in condpairs_decomp]; // must remove the ell\
+-part
+> assert &and[&and[y eq Minimum(y)*OF : y in x] \
+: x in combinedcondofcharpairs];
+> combinedcondofcharpairs := [[ZZ!Minimum(y) : y\
+ in x] : x in combinedcondofcharpairs];
+> notreduciblecurves := [];
+> Sengunbound := [];
+> allextrafactors := [];
+> for i := 1 to #dat do
+for>     if conds[i] eq 0 then continue; end if; 
+for>     temp1 := [];
+for>     temp2 := [];
+for>     for x in combinedcondofcharpairs[i] do
+for|for>         if conds[i] mod x ne 0 then con\
+tinue x; end if;
+for|for>         condquotient := ZZ!(conds[i]/x)\
+;
+for|for>         extrafac, sqfac := Squarefree(c\
+ondquotient);
+for|for>         assert extrafac*sqfac^2 eq cond\
+quotient;
+for|for>         Append(~temp1,sqfac*ell);
+for|for>         Append(~temp2,extrafac);
+for|for>     end for;
+for>     if #temp1 eq 0 then Append(~notreducibl\
+ecurves,i); continue; end if;
+for>     Append(~Sengunbound,<i,temp1,temp2>);
+for> end for;
+> #notreduciblecurves;
+0
+> 
+> Sengunbound := Sort(Sengunbound, func<x,y|Mini\
+mum(x[2])-Minimum(y[2])>);
+> Sengunbound;
+[
+<6, [ 882 ], [ 1 ]>,
+<2, [ 1008 ], [ 3 ]>,
+<85, [ 2835 ], [ 3 ]>,
+<1, [ 3024 ], [ 3 ]>,
+<3, [ 3024 ], [ 3 ]>,
+<45, [ 5292 ], [ 3 ]>,
+<13, [ 5292 ], [ 3 ]>,
+<87, [ 6174 ], [ 1 ]>,
+<370, [ 7056 ], [ 1 ]>,
+<29, [ 8505 ], [ 3 ]>,
+<7, [ 8505 ], [ 3 ]>,
+<71, [ 9408 ], [ 3 ]>,
+<284, [ 11340 ], [ 3 ]>,
+<176, [ 11340 ], [ 3 ]>,
+<312, [ 12348 ], [ 1 ]>,
+<304, [ 14175 ], [ 3 ]>,
+<111, [ 18522 ], [ 3 ]>,
+<169, [ 19845 ], [ 3 ]>,
+<350, [ 19845 ], [ 3 ]>,
+<336, [ 21168 ], [ 3 ]>,
+<24, [ 23814 ], [ 3 ]>,
+<126, [ 23814 ], [ 3 ]>,
+<36, [ 25200 ], [ 3 ]>,
+<23, [ 25200 ], [ 3 ]>,
+<12, [ 27216 ], [ 3 ]>,
+<5, [ 27216 ], [ 3 ]>,
+<63, [ 27216 ], [ 3 ]>,
+<21, [ 27216 ], [ 3 ]>,
+<50, [ 27216 ], [ 3 ]>,
+<18, [ 27216 ], [ 3 ]>,
+<16, [ 34020 ], [ 3 ]>,
+<61, [ 34020 ], [ 3 ]>,
+<22, [ 34020 ], [ 3 ]>,
+<112, [ 34020 ], [ 3 ]>,
+<81, [ 36288 ], [ 3 ]>,
+<20, [ 36288 ], [ 3 ]>,
+<143, [ 36288 ], [ 3 ]>,
+<11, [ 36288 ], [ 3 ]>,
+<32, [ 36288 ], [ 3 ]>,
+<194, [ 37044 ], [ 3 ]>,
+<220, [ 37044 ], [ 3 ]>,
+<279, [ 37044 ], [ 3 ]>,
+<49, [ 42525 ], [ 3 ]>,
+<131, [ 42525 ], [ 3 ]>,
+<275, [ 42525 ], [ 3 ]>,
+<181, [ 44100 ], [ 1 ]>,
+<174, [ 47628 ], [ 3 ]>,
+<239, [ 47628 ], [ 3 ]>,
+<78, [ 47628 ], [ 3 ]>,
+<343, [ 47628 ], [ 3 ]>,
+<219, [ 49392 ], [ 3 ]>,
+<15, [ 49392 ], [ 3 ]>,
+<184, [ 49392 ], [ 1 ]>,
+<99, [ 49392 ], [ 3 ]>,
+<278, [ 59535 ], [ 3 ]>,
+<357, [ 59535 ], [ 3 ]>,
+<44, [ 63504 ], [ 3 ]>,
+<57, [ 63504 ], [ 3 ]>,
+<105, [ 63504 ], [ 3 ]>,
+<352, [ 65856 ], [ 3 ]>,
+<234, [ 65856 ], [ 3 ]>,
+<291, [ 66150 ], [ 3 ]>,
+<64, [ 66150 ], [ 3 ]>,
+<53, [ 75600 ], [ 3 ]>,
+<66, [ 75600 ], [ 3 ]>,
+<27, [ 75600 ], [ 3 ]>,
+<9, [ 75600 ], [ 3 ]>,
+<273, [ 79380 ], [ 3 ]>,
+<242, [ 79380 ], [ 3 ]>,
+<104, [ 79380 ], [ 3 ]>,
+<89, [ 84672 ], [ 3 ]>,
+<154, [ 84672 ], [ 3 ]>,
+<331, [ 99225 ], [ 3 ]>,
+<91, [ 108864 ], [ 3 ]>,
+<34, [ 108864 ], [ 3 ]>,
+<73, [ 108864 ], [ 3 ]>,
+<55, [ 108864 ], [ 3 ]>,
+<68, [ 108864 ], [ 3 ]>,
+<14, [ 108864 ], [ 3 ]>,
+<28, [ 108864 ], [ 3 ]>,
+<8, [ 108864 ], [ 3 ]>,
+<17, [ 108864 ], [ 3 ]>,
+<130, [ 108864 ], [ 3 ]>,
+<47, [ 108864 ], [ 3 ]>,
+<56, [ 108864 ], [ 3 ]>,
+<360, [ 129654 ], [ 3 ]>,
+<269, [ 132300 ], [ 3 ]>,
+<359, [ 138915 ], [ 3 ]>,
+<83, [ 148176 ], [ 3 ]>,
+<120, [ 148176 ], [ 3 ]>,
+<138, [ 148176 ], [ 3 ]>,
+<54, [ 148176 ], [ 3 ]>,
+<25, [ 148176 ], [ 3 ]>,
+<186, [ 148176 ], [ 3 ]>,
+<119, [ 148176 ], [ 3 ]>,
+<41, [ 148176 ], [ 3 ]>,
+<238, [ 166698 ], [ 3 ]>,
+<271, [ 166698 ], [ 3 ]>,
+<342, [ 170100 ], [ 3 ]>,
+<265, [ 170100 ], [ 3 ]>,
+<213, [ 170100 ], [ 3 ]>,
+<95, [ 170100 ], [ 3 ]>,
+<347, [ 170100 ], [ 3 ]>,
+<144, [ 190512 ], [ 3 ]>,
+<117, [ 190512 ], [ 3 ]>,
+<258, [ 190512 ], [ 3 ]>,
+<160, [ 190512 ], [ 3 ]>,
+<210, [ 190512 ], [ 3 ]>,
+<183, [ 190512 ], [ 3 ]>,
+<354, [ 226800 ], [ 3 ]>,
+<51, [ 226800 ], [ 3 ]>,
+<93, [ 226800 ], [ 3 ]>,
+<159, [ 226800 ], [ 3 ]>,
+<40, [ 226800 ], [ 3 ]>,
+<72, [ 226800 ], [ 3 ]>,
+<96, [ 226800 ], [ 3 ]>,
+<237, [ 226800 ], [ 3 ]>,
+<188, [ 226800 ], [ 3 ]>,
+<362, [ 235200 ], [ 3 ]>,
+<209, [ 238140 ], [ 3 ]>,
+<318, [ 238140 ], [ 3 ]>,
+<349, [ 333396 ], [ 3 ]>,
+<30, [ 345744 ], [ 3 ]>,
+<207, [ 381024, 762048 ], [ 3, 3 ]>,
+<262, [ 396900 ], [ 3 ]>,
+<67, [ 416745 ], [ 3 ]>,
+<323, [ 416745 ], [ 3 ]>,
+<230, [ 416745 ], [ 3 ]>,
+<177, [ 444528 ], [ 3 ]>,
+<113, [ 444528 ], [ 3 ]>,
+<86, [ 444528 ], [ 3 ]>,
+<333, [ 463050 ], [ 3 ]>,
+<135, [ 592704 ], [ 3 ]>,
+<162, [ 592704 ], [ 3 ]>,
+<330, [ 592704 ], [ 3 ]>,
+<226, [ 595350 ], [ 3 ]>,
+<203, [ 680400 ], [ 3 ]>,
+<212, [ 680400 ], [ 3 ]>,
+<172, [ 680400 ], [ 3 ]>,
+<114, [ 680400 ], [ 3 ]>,
+<170, [ 680400 ], [ 3 ]>,
+<308, [ 680400 ], [ 3 ]>,
+<205, [ 680400 ], [ 3 ]>,
+<108, [ 680400 ], [ 3 ]>,
+<133, [ 680400 ], [ 3 ]>,
+<80, [ 680400 ], [ 3 ]>,
+<322, [ 680400 ], [ 3 ]>,
+<42, [ 680400 ], [ 3 ]>,
+<300, [ 680400 ], [ 3 ]>,
+<358, [ 680400 ], [ 3 ]>,
+<77, [ 680400 ], [ 3 ]>,
+<247, [ 680400 ], [ 3 ]>,
+<178, [ 680400 ], [ 3 ]>,
+<198, [ 680400 ], [ 3 ]>,
+<136, [ 680400 ], [ 3 ]>,
+<150, [ 680400 ], [ 3 ]>,
+<286, [ 680400 ], [ 3 ]>,
+<378, [ 680400 ], [ 3 ]>,
+<166, [ 680400 ], [ 3 ]>,
+<376, [ 680400 ], [ 3 ]>,
+<201, [ 680400 ], [ 3 ]>,
+<338, [ 694575 ], [ 3 ]>,
+<129, [ 762048 ], [ 3 ]>,
+<241, [ 762048 ], [ 3 ]>,
+<307, [ 762048 ], [ 3 ]>,
+<102, [ 762048 ], [ 3 ]>,
+<199, [ 762048 ], [ 3 ]>,
+<268, [ 907200 ], [ 3 ]>,
+<355, [ 907200 ], [ 3 ]>,
+<229, [ 907200 ], [ 3 ]>,
+<302, [ 907200 ], [ 3 ]>,
+<235, [ 907200 ], [ 3 ]>,
+<110, [ 907200 ], [ 3 ]>,
+<79, [ 907200 ], [ 3 ]>,
+<139, [ 907200 ], [ 3 ]>,
+<4, [ 1037232 ], [ 3 ]>,
+<10, [ 1037232 ], [ 3 ]>,
+<317, [ 1190700 ], [ 3 ]>,
+<280, [ 1234800 ], [ 3 ]>,
+<157, [ 1234800 ], [ 3 ]>,
+<259, [ 1234800 ], [ 3 ]>,
+<217, [ 1234800 ], [ 1 ]>,
+<60, [ 1333584 ], [ 3 ]>,
+<299, [ 1333584 ], [ 3 ]>,
+<171, [ 1333584 ], [ 3 ]>,
+<244, [ 1333584 ], [ 3 ]>,
+<200, [ 1333584 ], [ 3 ]>,
+<248, [ 1333584 ], [ 3 ]>,
+<215, [ 1333584 ], [ 3 ]>,
+<191, [ 1333584 ], [ 3 ]>,
+<351, [ 1333584 ], [ 3 ]>,
+<328, [ 1333584 ], [ 3 ]>,
+<155, [ 1333584 ], [ 3 ]>,
+<222, [ 1333584 ], [ 3 ]>,
+<339, [ 1333584 ], [ 3 ]>,
+<148, [ 1333584 ], [ 3 ]>,
+<141, [ 1333584 ], [ 3 ]>,
+<109, [ 1333584 ], [ 3 ]>,
+<232, [ 1333584 ], [ 3 ]>,
+<263, [ 1587600 ], [ 3 ]>,
+<164, [ 1587600 ], [ 3 ]>,
+<193, [ 1587600 ], [ 3 ]>,
+<326, [ 1587600 ], [ 3 ]>,
+<293, [ 1646400 ], [ 3 ]>,
+<250, [ 1666980 ], [ 3 ]>,
+<125, [ 1666980 ], [ 3 ]>,
+<296, [ 1666980 ], [ 3 ]>,
+<267, [ 1778112 ], [ 3 ]>,
+<335, [ 1778112 ], [ 3 ]>,
+<142, [ 1778112 ], [ 3 ]>,
+<103, [ 1778112 ], [ 3 ]>,
+<152, [ 1778112 ], [ 3 ]>,
+<167, [ 1778112 ], [ 3 ]>,
+<223, [ 1778112 ], [ 3 ]>,
+<168, [ 1778112 ], [ 3 ]>,
+<253, [ 2083725 ], [ 3 ]>,
+<231, [ 2083725 ], [ 3 ]>,
+<311, [ 2083725 ], [ 3 ]>,
+<182, [ 2083725 ], [ 3 ]>,
+<264, [ 2083725 ], [ 3 ]>,
+<310, [ 2116800 ], [ 3 ]>,
+<282, [ 2116800 ], [ 3 ]>,
+<65, [ 2721600 ], [ 3 ]>,
+<190, [ 2721600 ], [ 3 ]>,
+<249, [ 2721600 ], [ 3 ]>,
+<173, [ 2721600 ], [ 3 ]>,
+<161, [ 2721600 ], [ 3 ]>,
+<211, [ 2721600 ], [ 3 ]>,
+<149, [ 2721600 ], [ 3 ]>,
+<216, [ 2721600 ], [ 3 ]>,
+<348, [ 2721600 ], [ 3 ]>,
+<146, [ 2721600 ], [ 3 ]>,
+<254, [ 2721600 ], [ 3 ]>,
+<98, [ 2721600 ], [ 3 ]>,
+<192, [ 2721600 ], [ 3 ]>,
+<84, [ 2721600 ], [ 3 ]>,
+<124, [ 2721600 ], [ 3 ]>,
+<224, [ 2721600 ], [ 3 ]>,
+<118, [ 2721600 ], [ 3 ]>,
+<344, [ 3704400 ], [ 3 ]>,
+<329, [ 3704400 ], [ 3 ]>,
+<151, [ 3704400 ], [ 3 ]>,
+<221, [ 3704400 ], [ 3 ]>,
+<92, [ 3704400 ], [ 3 ]>,
+<303, [ 4762800 ], [ 3 ]>,
+<274, [ 4762800 ], [ 3 ]>,
+<147, [ 4862025 ], [ 3 ]>,
+<206, [ 4862025 ], [ 3 ]>,
+<88, [ 5334336 ], [ 3 ]>,
+<128, [ 5334336 ], [ 3 ]>,
+<227, [ 5334336 ], [ 3 ]>,
+<204, [ 5334336 ], [ 3 ]>,
+<363, [ 5334336 ], [ 3 ]>,
+<158, [ 5334336 ], [ 3 ]>,
+<115, [ 5334336 ], [ 3 ]>,
+<228, [ 5334336 ], [ 3 ]>,
+<288, [ 5334336 ], [ 3 ]>,
+<175, [ 5334336 ], [ 3 ]>,
+<294, [ 5334336 ], [ 3 ]>,
+<208, [ 5334336 ], [ 3 ]>,
+<345, [ 5334336 ], [ 3 ]>,
+<306, [ 5334336 ], [ 3 ]>,
+<277, [ 5334336 ], [ 3 ]>,
+<252, [ 5334336 ], [ 3 ]>,
+<319, [ 5334336 ], [ 3 ]>,
+<179, [ 5334336 ], [ 3 ]>,
+<316, [ 5334336 ], [ 3 ]>,
+<276, [ 5334336 ], [ 3 ]>,
+<377, [ 6667920 ], [ 3 ]>,
+<313, [ 6667920 ], [ 3 ]>,
+<332, [ 6667920 ], [ 3 ]>,
+<287, [ 6667920 ], [ 3 ]>,
+<364, [ 6667920 ], [ 3 ]>,
+<257, [ 8334900 ], [ 3 ]>,
+<283, [ 8334900 ], [ 3 ]>,
+<297, [ 8334900 ], [ 3 ]>,
+<39, [ 8643600 ], [ 3 ]>,
+<33, [ 9335088 ], [ 3 ]>,
+<46, [ 9335088 ], [ 3 ]>,
+<48, [ 9335088 ], [ 3 ]>,
+<35, [ 9335088 ], [ 3 ]>,
+<37, [ 9335088 ], [ 3 ]>,
+<58, [ 9335088 ], [ 3 ]>,
+<70, [ 9335088 ], [ 3 ]>,
+<19, [ 9335088 ], [ 3 ]>,
+<26, [ 9335088 ], [ 3 ]>,
+<255, [ 11113200 ], [ 3 ]>,
+<218, [ 11113200 ], [ 3 ]>,
+<185, [ 11113200 ], [ 3 ]>,
+<366, [ 11113200 ], [ 3 ]>,
+<270, [ 11113200 ], [ 3 ]>,
+<337, [ 11113200 ], [ 3 ]>,
+<320, [ 11113200 ], [ 3 ]>,
+<379, [ 11113200 ], [ 3 ]>,
+<245, [ 11113200 ], [ 3 ]>,
+<285, [ 11113200 ], [ 3 ]>,
+<31, [ 12446784 ], [ 3 ]>,
+<43, [ 12446784 ], [ 3 ]>,
+<82, [ 12446784 ], [ 3 ]>,
+<69, [ 14586075 ], [ 3 ]>,
+<121, [ 14586075 ], [ 3 ]>,
+<233, [ 14586075 ], [ 3 ]>,
+<59, [ 14586075 ], [ 3 ]>,
+<38, [ 14586075 ], [ 3 ]>,
+<101, [ 14586075 ], [ 3 ]>,
+<367, [ 14817600 ], [ 3 ]>,
+<321, [ 14817600 ], [ 3 ]>,
+<314, [ 15558480 ], [ 3 ]>,
+<373, [ 15558480 ], [ 3 ]>,
+<251, [ 15558480 ], [ 3 ]>,
+<290, [ 19051200 ], [ 3 ]>,
+<353, [ 19051200 ], [ 3 ]>,
+<324, [ 19051200 ], [ 3 ]>,
+<371, [ 19051200 ], [ 3 ]>,
+<380, [ 19051200 ], [ 3 ]>,
+<260, [ 19051200 ], [ 3 ]>,
+<214, [ 19448100 ], [ 3 ]>,
+<76, [ 25930800 ], [ 3 ]>,
+<156, [ 25930800 ], [ 3 ]>,
+<225, [ 25930800 ], [ 3 ]>,
+<75, [ 25930800 ], [ 3 ]>,
+<325, [ 33339600 ], [ 3 ]>,
+<298, [ 33339600 ], [ 3 ]>,
+<327, [ 33339600 ], [ 3 ]>,
+<305, [ 33339600 ], [ 3 ]>,
+<374, [ 33339600 ], [ 3 ]>,
+<369, [ 33339600 ], [ 3 ]>,
+<356, [ 33339600 ], [ 3 ]>,
+<368, [ 33339600 ], [ 3 ]>,
+<196, [ 33339600 ], [ 3 ]>,
+<381, [ 33339600 ], [ 3 ]>,
+<266, [ 33339600 ], [ 3 ]>,
+<340, [ 33339600 ], [ 3 ]>,
+<195, [ 37340352 ], [ 3 ]>,
+<116, [ 37340352 ], [ 3 ]>,
+<90, [ 37340352 ], [ 3 ]>,
+<301, [ 44452800 ], [ 3 ]>,
+<261, [ 44452800 ], [ 3 ]>,
+<163, [ 46675440 ], [ 3 ]>,
+<97, [ 46675440 ], [ 3 ]>,
+<189, [ 46675440 ], [ 3 ]>,
+<140, [ 46675440 ], [ 3 ]>,
+<123, [ 46675440 ], [ 3 ]>,
+<236, [ 46675440 ], [ 3 ]>,
+<127, [ 58344300 ], [ 3 ]>,
+<94, [ 58344300 ], [ 3 ]>,
+<153, [ 58344300 ], [ 3 ]>,
+<187, [ 58344300 ], [ 3 ]>,
+<107, [ 58344300 ], [ 3 ]>,
+<165, [ 58344300 ], [ 3 ]>,
+<132, [ 58344300 ], [ 3 ]>,
+<197, [ 58344300 ], [ 3 ]>,
+<74, [ 58344300 ], [ 3 ]>,
+<272, [ 133358400 ], [ 3 ]>,
+<289, [ 133358400 ], [ 3 ]>,
+<309, [ 133358400 ], [ 3 ]>,
+<315, [ 133358400 ], [ 3 ]>,
+<372, [ 133358400 ], [ 3 ]>,
+<246, [ 133358400 ], [ 3 ]>,
+<365, [ 233377200 ], [ 3 ]>,
+<346, [ 233377200 ], [ 3 ]>,
+<122, [ 233377200 ], [ 3 ]>,
+<106, [ 233377200 ], [ 3 ]>,
+<145, [ 233377200 ], [ 3 ]>,
+<281, [ 233377200 ], [ 3 ]>,
+<295, [ 233377200 ], [ 3 ]>,
+<375, [ 233377200 ], [ 3 ]>,
+<256, [ 233377200 ], [ 3 ]>,
+<137, [ 311169600 ], [ 3 ]>
+]
+> 
+> smallestlevel := Minimum(Sengunbound[1][2]);
+> index := Sengunbound[1][1];
+> smallestlevel, index;
+882 6
+> Factorisation(smallestlevel);
+[ <2, 1>, <3, 2>, <7, 2> ]
+> 
+> 
+> [[Factorisation(y) : y in x[2]] : x in Sengunb\
+ound];
+[
+[
+[ <2, 1>, <3, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 1> ]
+],
+[
+[ <3, 4>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 3>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 3>, <7, 2> ]
+],
+[
+[ <2, 1>, <3, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 2> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 1>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 2>, <7, 3> ]
+],
+[
+[ <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 1>, <3, 3>, <7, 3> ]
+],
+[
+[ <3, 4>, <5, 1>, <7, 2> ]
+],
+[
+[ <3, 4>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 2> ]
+],
+[
+[ <2, 1>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 1>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 3>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 2>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 2> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 1>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 1>, <7, 3> ]
+],
+[
+[ <2, 1>, <3, 3>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 1>, <3, 3>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 3>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 3>, <7, 2> ]
+],
+[
+[ <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 1> ]
+],
+[
+[ <2, 1>, <3, 3>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 3>, <5, 2>, <7, 2> ]
+],
+[
+[ <3, 4>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 1>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 1>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 1>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <7, 4> ]
+],
+[
+[ <2, 5>, <3, 5>, <7, 2> ],
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 1>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 3>, <7, 3> ]
+],
+[
+[ <2, 1>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 3>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 1>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 3>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 3>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 1> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <3, 4>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 4>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 2>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 4>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 3>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 4>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 2> ]
+],
+[
+[ <2, 2>, <3, 4>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 3>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 5>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 1>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 2>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 6>, <3, 5>, <5, 2>, <7, 3> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 4>, <3, 5>, <5, 2>, <7, 4> ]
+],
+[
+[ <2, 6>, <3, 4>, <5, 2>, <7, 4> ]
+]
+]
+
+Total time: 12.019 seconds, Total memory usage: 525.09MB

@@ -1,0 +1,180 @@
+> L := Allpossiblesubsetsofchars;
+> {* #L[i] : i in [1..#L] *};
+{* 1^^5 *}
+> {* {* {* <#z[1],z[2]> : z in y *} : y in L[i] *} : i in [1..#L] *};
+{*
+{*
+{* <2, 1>, <4, 0> *}
+*}^^5
+*}
+> ell := 13;
+> F<zeta3> := CyclotomicField(3);
+> OF := RingOfIntegers(F);
+> errorinds := [];
+> dat := [];
+> for i in [1..#L] do
+for>     try
+for|try>         charconds := condgens[i];
+for|try>         goodcharpossibilities := [&join[ {*x^^block[2] : x in block[1]*} : block in option] : option in L[i]];
+for|try>         goodcharpossibilities := [x : x in goodcharpossibilities | #x in {2,6}];
+for|try>         goodcharcondpossibilities := [{* ((F!charconds[ii])*OF)^^Multiplicity(x,ii) : ii in Set(x) *} : x in goodcharpossibilities];
+for|try>         Append(~dat,goodcharcondpossibilities);
+for|try>         printf "%o:%o\n", i, &cat[s : s in Split(Sprint(goodcharcondpossibilities),"\n")];
+for|try>     catch e;
+for|try>         // print e;
+for|try>         // break;
+for|try>         // print i;
+for|try>         Append(~errorinds,i);
+for|try>     end try;
+for> end for;
+1:[{*Principal Ideal of OFGenerator:[-315, -420],Principal Ideal of OFGenerator:[315, -105]*}]
+2:[{*Principal Ideal of OFGenerator:[-490, -350],Principal Ideal of OFGenerator:[140, -350]*}]
+3:[{*Principal Ideal of OFGenerator:[-630, -840],Principal Ideal of OFGenerator:[630, -210]*}]
+4:[{*Principal Ideal of OFGenerator:[315, -945],Principal Ideal of OFGenerator:[1260, 945]*}]
+5:[{*Principal Ideal of OFGenerator:[-315, -420],Principal Ideal of OFGenerator:[315, -105]*}]
+> assert #errorinds eq 0;
+> 
+> {*{*#y : y in x*} : x in dat*};
+{*
+{* 2 *}^^5
+*}
+> AutF, auts, tau := AutomorphismGroup(F);
+> assert Order(AutF.1) eq 2; sigma := tau(AutF.1);
+> condpairs_decomp := [];
+> for i := 1 to #dat do
+for>     condpair_decomp := [];
+for>     for j := 1 to #dat[i] do
+for|for>         if #dat[i][j] ne 2 then continue; end if;
+for|for>         condpair := MultisetToSequence(dat[i][j]);
+for|for>         assert sigma(condpair[1]) eq condpair[2];
+for|for>         g := &+(condpair);
+for|for>         condpair_rempart := [x/g : x in condpair];
+for|for>         assert &and[nxg eq ell^Valuation(nxg,ell) where nxg is Norm(xibyg) : xibyg in condpair_rempart]; // remaining part is ell part
+for|for>         x1byg, x2byg := Explode(condpair_rempart);
+for|for>         Append(~condpair_decomp,<g,x1byg,x2byg>);
+for|for>     end for;
+for>     Append(~condpairs_decomp,condpair_decomp);
+for> end for;
+> #condpairs_decomp;
+5
+> {* #x : x in condpairs_decomp *};
+{* 1^^5 *}
+> condpairs_decomp;
+[
+[
+<Principal Ideal of OF
+Generator:
+[105, 0], Ideal of OF
+Basis:
+[ 1  4]
+[ 0 13], Principal Ideal of OF
+Generator:
+[-3, -4]>
+],
+[
+<Ideal of OF
+Two element generators:
+[140, -350]
+[-490, -350], Ideal of OF
+Basis:
+[ 1  4]
+[ 0 13], Ideal of OF
+Basis:
+[ 1 10]
+[ 0 13]>
+],
+[
+<Principal Ideal of OF
+Generator:
+[210, 0], Ideal of OF
+Basis:
+[ 1  4]
+[ 0 13], Principal Ideal of OF
+Generator:
+[-3, -4]>
+],
+[
+<Principal Ideal of OF
+Generator:
+[315, 0], Ideal of OF
+Basis:
+[ 1  4]
+[ 0 13], Principal Ideal of OF
+Generator:
+[1, -3]>
+],
+[
+<Principal Ideal of OF
+Generator:
+[105, 0], Ideal of OF
+Basis:
+[ 1  4]
+[ 0 13], Principal Ideal of OF
+Generator:
+[-3, -4]>
+]
+]
+> 
+> 
+> ZZ := Integers();
+> combinedcondofcharpairs := [[y[1]^2 : y in x] : x in condpairs_decomp]; // must remove the ell-part
+> assert &and[&and[y eq Minimum(y)*OF : y in x] : x in combinedcondofcharpairs];
+> combinedcondofcharpairs := [[ZZ!Minimum(y) : y in x] : x in combinedcondofcharpairs];
+> notreduciblecurves := [];
+> Sengunbound := [];
+> allextrafactors := [];
+> for i := 1 to #dat do
+for>     if conds[i] eq 0 then continue; end if;
+for>     temp1 := [];
+for>     temp2 := [];
+for>     for x in combinedcondofcharpairs[i] do
+for|for>         if conds[i] mod x ne 0 then continue x; end if;
+for|for>         condquotient := ZZ!(conds[i]/x);
+for|for>         extrafac, sqfac := Squarefree(condquotient);
+for|for>         assert extrafac*sqfac^2 eq condquotient;
+for|for>         Append(~temp1,sqfac*ell);
+for|for>         Append(~temp2,extrafac);
+for|for>     end for;
+for>     if #temp1 eq 0 then Append(~notreduciblecurves,i); continue; end if;
+for>     Append(~Sengunbound,<i,temp1,temp2>);
+for> end for;
+> #notreduciblecurves;
+0
+> 
+> 
+> Sengunbound := Sort(Sengunbound, func<x,y|Minimum(x[2])-Minimum(y[2])>);
+> Sengunbound;
+[
+<1, [ 61425 ], [ 3 ]>,
+<5, [ 61425 ], [ 3 ]>,
+<2, [ 81900 ], [ 1 ]>,
+<3, [ 245700 ], [ 3 ]>,
+<4, [ 552825 ], [ 3 ]>
+]
+> 
+> smallestlevel := Minimum(Sengunbound[1][2]);
+> index := Sengunbound[1][1];
+> smallestlevel, index;
+61425 1
+> Factorisation(smallestlevel);
+[ <3, 3>, <5, 2>, <7, 1>, <13, 1> ]
+> 
+> 
+> [[Factorisation(y) : y in x[2]] : x in Sengunbound];
+[
+[
+[ <3, 3>, <5, 2>, <7, 1>, <13, 1> ]
+],
+[
+[ <3, 3>, <5, 2>, <7, 1>, <13, 1> ]
+],
+[
+[ <2, 2>, <3, 2>, <5, 2>, <7, 1>, <13, 1> ]
+],
+[
+[ <2, 2>, <3, 3>, <5, 2>, <7, 1>, <13, 1> ]
+],
+[
+[ <3, 5>, <5, 2>, <7, 1>, <13, 1> ]
+]
+]

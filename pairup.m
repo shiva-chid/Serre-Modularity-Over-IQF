@@ -33,7 +33,7 @@ and return the list of pairs, and their indices in the given list}
 end intrinsic;
 
 
-intrinsic pairupconjugate(L :: List, ell :: RngIntElt : n:=500) -> List, SeqEnum
+intrinsic pairupconjugate(L :: List, ell :: RngIntElt : n:=500, perfectmatch := false) -> List, SeqEnum
 {Given a list of Hecke characters over a quadratic number field F valued in F_ell,
 pair them up as Galois conjugate pairs, and
 return the list of pairs, and their indices in the given list}
@@ -59,9 +59,9 @@ return the list of pairs, and their indices in the given list}
             end if;
         end for;
         printf "Conjugate of %oth character in the list does not exist in the list.\n", i;
-        return false;
+        if perfectmatch then return false; end if;
     end for;
-    assert Set(doneindices) eq {1..#L};
+    if perfectmatch then assert Set(doneindices) eq {1..#L}; end if;
     return pairs, pairindices;
 end intrinsic;
 

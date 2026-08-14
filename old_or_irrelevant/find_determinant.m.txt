@@ -1,4 +1,4 @@
-intrinsic find_determinant(g :: RngUPolElt, ell :: RngIntElt, epsillon1 :: GrpHeckeElt : primes_bound := 400, charpols := [], unramified := false, useinertFrobsq := true) -> SeqEnum, SeqEnum
+intrinsic find_determinant(g :: RngUPolElt, ell :: RngIntElt, epsilon :: GrpHeckeElt : primes_bound := 400, charpols := [], unramified := false, useinertFrobsq := true) -> SeqEnum, SeqEnum
 {returns list of characters of the Galois group of K=Q(zeta_3) that can
 possibly occur as the determinant of a 2-d subrepresentation in the mod-ell Galois representation of the Jacobian of the curve y^3 = f(x).}
 
@@ -85,25 +85,25 @@ possibly occur as the determinant of a 2-d subrepresentation in the mod-ell Galo
         // printf "Charpol %o at p=%o has roots %o over F_%o\n",charpol, p, roots_charpol, ell;
         gens_evalsatpabove := [[resmodell((gens_G[i])(frakp)) : i in [1..n]] : frakp in pabove];
 
-        epsillon1_atpabove := resmodell(epsillon1(pabove[1]));
-        // printf "the value of epsillon_1 at %o is %o\n", p, epsillon1_atpabove[1];
+        epsilon_atpabove := resmodell(epsilon(pabove[1]));
+        // printf "the value of epsilon at %o is %o\n", p, epsilon_atpabove[1];
         // printf "the prime %o is %o in F_%o\n", p, P_ell!p, ell;
 
 
-        index := Index(eigvals_rhoell_frobp, epsillon1_atpabove);
+        index := Index(eigvals_rhoell_frobp, epsilon_atpabove);
 	if index ne 0 then
 	    Remove(~eigvals_rhoell_frobp, index);
 	end if;
-        index := Index(eigvals_rhoell_frobp, pp * epsillon1_atpabove^-1);
+        index := Index(eigvals_rhoell_frobp, pp * epsilon_atpabove^-1);
 	if index ne 0 then
 	    Remove(~eigvals_rhoell_frobp, index);
     else
         pp := pp * pp;
-        index := Index(eigvals_rhoell_frobp, pp * epsillon1_atpabove^-1);
+        index := Index(eigvals_rhoell_frobp, pp * epsilon_atpabove^-1);
         if index ne 0 then
             Remove(~eigvals_rhoell_frobp, index);
         else
-            printf "could not find any factors %o or %o. Investigate further\n", P_ell!p/epsillon1_atpabove, pp/epsillon1_atpabove;
+            printf "could not find any factors %o or %o. Investigate further\n", P_ell!p/epsilon_atpabove, pp/epsilon_atpabove;
         end if;
 	end if;
 

@@ -1,5 +1,5 @@
 SetColumns(0);
-SetLogFile("2dcharpolys_bestexample_2ndcurve.log");
+SetLogFile("2dcharpolys_2ndcurve.log");
 i := 2;
 load "nonsurj7.txt";
 load "allcharsoutput.txt";

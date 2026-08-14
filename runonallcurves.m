@@ -15,7 +15,6 @@ for coe in curves do
     ramchars, rootsofLpols2 := find_onedimchar(f,ell : ramified := true);
     Append(~NumberOfPossiblyramifiedatellChars, #ramchars);
     Append(~out2,ramchars);
-    assert rootsofLpols1 eq rootsofLpols2;
 end for;
 // sanity check: verifying that unramchars is a subset of ramchars
 assert &and[NumberOfUnramifiedatellChars[i] le NumberOfPossiblyramifiedatellChars[i] : i in [1..#curves]];

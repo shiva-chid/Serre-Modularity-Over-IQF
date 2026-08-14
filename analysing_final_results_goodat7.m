@@ -48,7 +48,7 @@ condpairs_decomp := [];
 for i := 1 to #dat do
     condpair_decomp := [];
     for j := 1 to #dat[i] do
-        condpair := Setseq(Set(dat[i][j]));
+        condpair := MultisetToSequence(dat[i][j]);
         assert #condpair eq 2;
         assert sigma(condpair[1]) eq condpair[2];
         g := &+(condpair);
@@ -80,16 +80,18 @@ for i := 1 to #dat do
         Append(~temp1,sqfac*ell);
         Append(~temp2,extrafac);
     end for;
-    if #temp1 eq 0 then Append(~notreduciblecurves,i); continue; end if;
+    if #temp1 eq 0 then Append(~notreduciblecurves,ii); continue; end if;
     Append(~Sengunbound,<ii,temp1,temp2>);
 end for;
 #notreduciblecurves;
 
-smallestlevel := Minimum([Minimum(x[2]) : x in Sengunbound]);
+Sengunbound := Sort(Sengunbound, func<x,y|Minimum(x[2])-Minimum(y[2])>);
+Sengunbound;
 
+smallestlevel := Minimum(Sengunbound[1][2]);
+index := Sengunbound[1][1];
+smallestlevel, index;
 Factorisation(smallestlevel);
 
-Sengunbound := Sort(Sengunbound, func<x,y|x[2][1]-y[2][1]>);
-Sengunbound;
 
 [[Factorisation(y) : y in x[2]] : x in Sengunbound];
