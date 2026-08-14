@@ -1,5 +1,0 @@
-numberofpossibledetchars[1] := 4;
-numberofpossibledetchars[2] := 4;
-numberofpossibledetchars[3] := 4;
-numberofpossibledetchars[4] := 4;
-numberofpossibledetchars[5] := 4;
