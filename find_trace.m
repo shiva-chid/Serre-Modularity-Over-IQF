@@ -61,18 +61,21 @@ Jacobian of the curve y^3 = f(x).}
         if cond mod p eq 0 then continue; end if;
 
         pabove := PrimeIdealsOverPrime(F, p);
+        pabovegens := [(#pabove eq 1) select F!p else ppgen where _,ppgen is IsPrincipal(pp) : pp in pabove];
+        dets_atpabove := [resmodell(det(pp)) : pp in pabove];
+        det_atpabove := dets_atpabove[1];
+        Np := GF(ell)!Norm(pabove[1]);
+        if #pabove eq 2 then assert dets_atpabove[2] eq Np^2/det_atpabove; end if;
         epsilon_atpabove := resmodell(epsilon(pabove[1]));
-        det_atpabove := resmodell(det(pabove[1]));
-        pp := P_ell!Norm(pabove[1]);
+
         charpol := charpolsmodell[ind, 2];
         coeff := Coefficient(charpol, 5);
-        denom := 1 + pp * det_atpabove^-1;
-        if denom ne 0 then
-            trace := -(coeff + epsilon_atpabove + pp * epsilon_atpabove^-1)/denom;
-            Append(~primes_dets_traces, <p, det_atpabove, [trace, pp * det_atpabove^-1 * trace]>);
-        else
-            Append(~primes_dets_traces, <p, det_atpabove, "no trace">)
-        end if;
+        denom := 1 + Np * det_atpabove^-1;
+        if denom eq 0 then continue; end if;
+
+        trace := -(coeff + epsilon_atpabove + Np * epsilon_atpabove^-1)/denom;
+        Append(~primes_dets_traces, <pabovegens[1], det_atpabove, [trace]>);
+        if #pabove gt 1 then Append(~primes_dets_traces, <pabovegens[2], Np^2/det_atpabove, [Np * det_atpabove^-1 * trace]>); end if;
     end for;
 
 */
@@ -85,9 +88,12 @@ Jacobian of the curve y^3 = f(x).}
         if cond mod p eq 0 then continue; end if;
   
         pabove := PrimeIdealsOverPrime(F, p);
+        pabovegens := [(#pabove eq 1) select F!p else ppgen where _,ppgen is IsPrincipal(pp) : pp in pabove];
+        dets_atpabove := [resmodell(det(pp)) : pp in pabove];
+        det_atpabove := dets_atpabove[1];
+        Np := GF(ell)!Norm(pabove[1]);
+        if #pabove eq 2 then assert dets_atpabove[2] eq Np^2/det_atpabove; end if;
         epsilon_atpabove := resmodell(epsilon(pabove[1]));
-        det_atpabove := resmodell(det(pabove[1]));
-        pp := P_ell!Norm(pabove[1]);
 
         charpol := charpolsmodell[ind, 2];
         charpolfacs := Roots(charpol, GF(ell, 2));
@@ -99,11 +105,11 @@ Jacobian of the curve y^3 = f(x).}
 	    end for;
         assert #all_roots eq 6;
 
-        // print p, all_roots, epsilon_atpabove, pp/epsilon_atpabove;
+        // print p, all_roots, epsilon_atpabove, Np/epsilon_atpabove;
         index := Index(all_roots, epsilon_atpabove);
         assert index ne 0;
         Remove(~all_roots, index);
-        index := Index(all_roots, pp/epsilon_atpabove);
+        index := Index(all_roots, Np/epsilon_atpabove);
         assert index ne 0;
         Remove(~all_roots, index);
 
@@ -111,12 +117,24 @@ Jacobian of the curve y^3 = f(x).}
         for i in [1..(#all_roots-1)] do
             for j in [(i+1)..#all_roots] do
                 if all_roots[i]*all_roots[j] eq det_atpabove then
-                    Include(~possible_traces_atp, all_roots[i] + all_roots[j]);
+                    Include(~possible_traces_atp, GF(ell)!(all_roots[i] + all_roots[j]));
                 end if;
             end for;
         end for;
 
-        Append(~primes_dets_traces, <p, det_atpabove, Setseq(possible_traces_atp)>);
+        if #possible_traces_atp eq 1 then
+            t := Setseq(possible_traces_atp)[1];
+            Append(~primes_dets_traces, <pabovegens[1], det_atpabove, [t]>);
+            if #pabove gt 1 then Append(~primes_dets_traces, <pabovegens[2], Np^2/det_atpabove, [Np * det_atpabove^-1 * t]>); end if;
+        else
+            assert #possible_traces_atp eq 2;
+            ts := Setseq(possible_traces_atp);
+            assert ts[1] eq -ts[2];
+            Append(~primes_dets_traces, <pabovegens[1], det_atpabove, ts>);
+            assert #pabove eq 2 and det_atpabove eq -Np;
+            Append(~primes_dets_traces, <pabovegens[2], det_atpabove, ts>);
+        end if;
+            
     end for;
 
     return primes_dets_traces;

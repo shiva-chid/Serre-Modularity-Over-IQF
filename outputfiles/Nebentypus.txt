@@ -1,1402 +1,1268 @@
+wt := AssociativeArray();
 orderofNebentypus := AssociativeArray();
 NebentypusField := AssociativeArray();
+wt[6] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[6] := 1;
 NebentypusField[6] := Polynomial(\[1, 1, 1]);
-orderofNebentypus[7] := 6;
-NebentypusField[7] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[29] := 6;
-NebentypusField[29] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[26] := 6;
-NebentypusField[26] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[4] := 6;
-NebentypusField[4] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[13] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[13] := 3;
 NebentypusField[13] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[19] := 6;
-NebentypusField[19] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[14] := 6;
-NebentypusField[14] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[1] := 6;
-NebentypusField[1] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[11] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[11] := 1;
 NebentypusField[11] := Polynomial(\[1, 1, 1]);
-orderofNebentypus[3] := 6;
-NebentypusField[3] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[23] := 6;
-NebentypusField[23] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[12] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[12] := 6;
 NebentypusField[12] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -1, -2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[20] := 3;
-NebentypusField[20] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[24] := 3;
-NebentypusField[24] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[10] := 6;
-NebentypusField[10] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[30] := 2;
-NebentypusField[30] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[9] := 6;
-NebentypusField[9] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[16] := 6;
-NebentypusField[16] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[31] := 6;
-NebentypusField[31] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[17] := 6;
-NebentypusField[17] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[10] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[10] := 3;
+NebentypusField[10] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[16] := {* IntegerRing() | 1, 3 *};
+
+wt[7] := {* IntegerRing() | 1, 3 *};
+
+wt[14] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[14] := 6;
+NebentypusField[14] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[27] := 6;
-NebentypusField[27] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[21] := 6;
-NebentypusField[21] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[25] := 6;
-NebentypusField[25] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[8] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[8] := 6;
 NebentypusField[8] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[32] := 3;
-NebentypusField[32] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[18] := 6;
-NebentypusField[18] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[4] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[4] := 3;
+NebentypusField[4] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[3] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[3] := 6;
+NebentypusField[3] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[22] := 6;
-NebentypusField[22] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[1] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[1] := 6;
+NebentypusField[1] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[15] := {* IntegerRing() | 0, 4 *};
+
+wt[5] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[5] := 6;
 NebentypusField[5] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[9] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[9] := 6;
+NebentypusField[9] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[2] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[2] := 2;
 NebentypusField[2] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[28] := 6;
-NebentypusField[28] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[17] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[17] := 6;
+NebentypusField[17] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[18] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[18] := 6;
+NebentypusField[18] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[15] := 6;
-NebentypusField[15] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[19] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[19] := 3;
+NebentypusField[19] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[22] := {* IntegerRing() | 1, 3 *};
+
+wt[20] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[20] := 3;
+NebentypusField[20] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[26] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[26] := 3;
+NebentypusField[26] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[25] := {* IntegerRing() | 1, 3 *};
+
+wt[23] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[23] := 6;
+NebentypusField[23] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[33] := 6;
-NebentypusField[33] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[35] := 6;
-NebentypusField[35] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[38] := 6;
-NebentypusField[38] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[49] := 6;
-NebentypusField[49] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -1225, -2450 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[34] := 6;
-NebentypusField[34] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[29] := {* IntegerRing() | 1, 3 *};
+
+wt[24] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[24] := 3;
+NebentypusField[24] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[28] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[28] := 6;
+NebentypusField[28] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[31] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[31] := 6;
+NebentypusField[31] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[21] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[21] := 6;
+NebentypusField[21] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[32] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[32] := 3;
+NebentypusField[32] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[27] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[27] := 6;
+NebentypusField[27] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[30] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[30] := 1;
+NebentypusField[30] := Polynomial(\[1, 1, 1]);
+
+wt[35] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[35] := 3;
+NebentypusField[35] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[33] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[33] := 3;
+NebentypusField[33] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[37] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[37] := 6;
 NebentypusField[37] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[46] := 6;
-NebentypusField[46] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[48] := 6;
-NebentypusField[48] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -1, -2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[45] := 3;
-NebentypusField[45] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[59] := 6;
-NebentypusField[59] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[39] := 6;
-NebentypusField[39] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[42] := 6;
-NebentypusField[42] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[36] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[36] := 6;
 NebentypusField[36] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[54] := 6;
-NebentypusField[54] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[38] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[38] := 3;
+NebentypusField[38] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[34] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[34] := 6;
+NebentypusField[34] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -1, -2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[47] := 3;
-NebentypusField[47] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[43] := 6;
-NebentypusField[43] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[39] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[39] := 3;
+NebentypusField[39] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[41] := {* IntegerRing() | 0, 4 *};
+
+wt[40] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[40] := 3;
 NebentypusField[40] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[44] := 6;
-NebentypusField[44] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[41] := 6;
-NebentypusField[41] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[43] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[43] := 6;
+NebentypusField[43] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[56] := 3;
-NebentypusField[56] := Polynomial([CyclotomicField(3) | [ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[44] := {* IntegerRing() | 1, 3 *};
+
+wt[48] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[48] := 6;
+NebentypusField[48] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -1, -2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[45] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[45] := 3;
+NebentypusField[45] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[46] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[46] := 3;
+NebentypusField[46] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[42] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[42] := 6;
+NebentypusField[42] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -50, -100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[49] := {* IntegerRing() | 1, 3 *};
+
+wt[47] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[47] := 3;
+NebentypusField[47] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[50] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[50] := 6;
 NebentypusField[50] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[57] := 6;
-NebentypusField[57] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[60] := 6;
-NebentypusField[60] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -98, -196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[61] := 6;
-NebentypusField[61] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -14, -28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[55] := 6;
-NebentypusField[55] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[52] := 6;
-NebentypusField[52] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[53] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[53] := 6;
 NebentypusField[53] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[52] := {* IntegerRing() | 0, 4 *};
+
+wt[51] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[51] := 3;
+NebentypusField[51] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[55] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[55] := 6;
+NebentypusField[55] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[54] := {* IntegerRing() | 1, 3 *};
+
+wt[57] := {* IntegerRing() | 1, 3 *};
+
+wt[56] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[56] := 3;
+NebentypusField[56] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[60] := {* IntegerRing() | 0, 4 *};
+
+wt[59] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[59] := 3;
+NebentypusField[59] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[58] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[58] := 6;
 NebentypusField[58] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[64] := 3;
-NebentypusField[64] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[63] := 6;
-NebentypusField[63] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[51] := 3;
-NebentypusField[51] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[61] := {* IntegerRing() | 1, 3 *};
+
+wt[62] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[62] := 6;
 NebentypusField[62] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[67] := 6;
-NebentypusField[67] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[64] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[64] := 3;
+NebentypusField[64] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[63] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[63] := 6;
+NebentypusField[63] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[67] := {* IntegerRing() | 1, 3 *};
+
+wt[66] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[66] := 6;
 NebentypusField[66] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[69] := 6;
-NebentypusField[69] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, -7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[65] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[65] := 6;
 NebentypusField[65] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[70] := 6;
-NebentypusField[70] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[87] := 1;
-NebentypusField[87] := Polynomial(\[1, 1, 1]);
+
+wt[68] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[68] := 3;
-NebentypusField[68] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[72] := 3;
-NebentypusField[72] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[85] := 6;
-NebentypusField[85] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[78] := 3;
-NebentypusField[78] := Polynomial([CyclotomicField(3) | [ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[68] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[69] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[69] := 3;
+NebentypusField[69] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[70] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[70] := 3;
+NebentypusField[70] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[73] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[73] := 3;
 NebentypusField[73] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[72] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[72] := 3;
+NebentypusField[72] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[75] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[75] := 3;
+NebentypusField[75] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[74] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[74] := 3;
+NebentypusField[74] := Polynomial([CyclotomicField(3) | [ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[78] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[78] := 3;
+NebentypusField[78] := Polynomial([CyclotomicField(3) | [ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[77] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[77] := 6;
 NebentypusField[77] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 10, 20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[80] := 6;
-NebentypusField[80] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[76] := 6;
-NebentypusField[76] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[83] := 6;
-NebentypusField[83] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[74] := 6;
-NebentypusField[74] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[82] := 2;
-NebentypusField[82] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[86] := 2;
-NebentypusField[86] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[91] := 3;
-NebentypusField[91] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[75] := 6;
-NebentypusField[75] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[92] := 6;
-NebentypusField[92] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -2450, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[84] := 6;
-NebentypusField[84] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -50, -100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[88] := 6;
-NebentypusField[88] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[83] := {* IntegerRing() | 1, 3 *};
+
+wt[76] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[76] := 3;
+NebentypusField[76] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[81] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[81] := 6;
 NebentypusField[81] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[79] := 3;
-NebentypusField[79] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[93] := 3;
-NebentypusField[93] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[95] := 6;
-NebentypusField[95] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -4900, -9800 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[90] := 6;
-NebentypusField[90] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[94] := 6;
-NebentypusField[94] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[96] := 3;
-NebentypusField[96] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[101] := 6;
-NebentypusField[101] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+
+wt[85] := {* IntegerRing() | 1, 3 *};
+
+wt[80] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[80] := 6;
+NebentypusField[80] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[99] := 6;
-NebentypusField[99] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[79] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[79] := 3;
+NebentypusField[79] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[87] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[87] := 1;
+NebentypusField[87] := Polynomial(\[1, 1, 1]);
+
+wt[86] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[86] := 2;
+NebentypusField[86] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[82] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[82] := 2;
+NebentypusField[82] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[84] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[84] := 6;
+NebentypusField[84] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[97] := 6;
-NebentypusField[97] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+
+wt[88] := {* IntegerRing() | 0, 4 *};
+
+wt[91] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[91] := 3;
+NebentypusField[91] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[90] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[90] := 6;
+NebentypusField[90] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[92] := {* IntegerRing() | 0, 4 *};
+
+wt[93] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[93] := 3;
+NebentypusField[93] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[95] := {* IntegerRing() | 1, 3 *};
+
+wt[94] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[94] := 3;
+NebentypusField[94] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[96] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[96] := 3;
+NebentypusField[96] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[97] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[97] := 3;
+NebentypusField[97] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[100] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[100] := 6;
 NebentypusField[100] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[111] := 3;
-NebentypusField[111] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[98] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[98] := 6;
 NebentypusField[98] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 10, 20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[105] := 6;
-NebentypusField[105] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[106] := 6;
-NebentypusField[106] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[103] := 3;
-NebentypusField[103] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[107] := 6;
-NebentypusField[107] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[121] := 6;
-NebentypusField[121] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[99] := {* IntegerRing() | 1, 3 *};
+
+wt[101] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[101] := 3;
+NebentypusField[101] := Polynomial([CyclotomicField(3) | [ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[103] := {* IntegerRing() | 0, 4 *};
+
+wt[104] := {* IntegerRing() | 0, 4 *};
+
+wt[107] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[107] := 3;
+NebentypusField[107] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[106] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[106] := 3;
+NebentypusField[106] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[105] := {* IntegerRing() | 1, 3 *};
+
+wt[108] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[108] := 3;
-NebentypusField[108] := Polynomial([CyclotomicField(3) | [ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[109] := 6;
-NebentypusField[109] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[112] := 6;
-NebentypusField[112] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[104] := 3;
-NebentypusField[104] := Polynomial([CyclotomicField(3) | [ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[115] := 6;
-NebentypusField[115] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+NebentypusField[108] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[109] := {* IntegerRing() | 0, 4 *};
+
+wt[110] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[110] := 3;
 NebentypusField[110] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[119] := 6;
-NebentypusField[119] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[112] := {* IntegerRing() | 1, 3 *};
+
+wt[113] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[113] := 6;
 NebentypusField[113] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[117] := 6;
-NebentypusField[117] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[122] := 6;
-NebentypusField[122] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[116] := 6;
-NebentypusField[116] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[120] := 6;
-NebentypusField[120] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[123] := 6;
-NebentypusField[123] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[111] := {* IntegerRing() | 0, 4 *};
+
+wt[117] := {* IntegerRing() | 1, 3 *};
+
+wt[114] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[114] := 6;
 NebentypusField[114] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[126] := 3;
-NebentypusField[126] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[116] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[116] := 6;
+NebentypusField[116] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[115] := {* IntegerRing() | 0, 4 *};
+
+wt[118] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[118] := 6;
 NebentypusField[118] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[128] := 6;
-NebentypusField[128] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -14, -28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[125] := 6;
-NebentypusField[125] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[119] := {* IntegerRing() | 1, 3 *};
+
+wt[120] := {* IntegerRing() | 0, 4 *};
+
+wt[121] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[121] := 3;
+NebentypusField[121] := Polynomial([CyclotomicField(3) | [ RationalField() | -1, -2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[125] := {* IntegerRing() | 1, 3 *};
+
+wt[122] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[122] := 3;
+NebentypusField[122] := Polynomial([CyclotomicField(3) | [ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[123] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[123] := 3;
+NebentypusField[123] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[126] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[126] := 3;
+NebentypusField[126] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[124] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[124] := 6;
 NebentypusField[124] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[127] := 6;
-NebentypusField[127] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[131] := 6;
-NebentypusField[131] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -35, -70 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[127] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[127] := 3;
+NebentypusField[127] := Polynomial([CyclotomicField(3) | [ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[131] := {* IntegerRing() | 1, 3 *};
+
+wt[128] := {* IntegerRing() | 0, 4 *};
+
+wt[130] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[130] := 3;
-NebentypusField[130] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[132] := 6;
-NebentypusField[132] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[133] := 3;
-NebentypusField[133] := Polynomial([CyclotomicField(3) | [ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[130] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[134] := {* IntegerRing() | 0, 4 *};
+
+wt[136] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[136] := 6;
 NebentypusField[136] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[134] := 6;
-NebentypusField[134] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[141] := 6;
-NebentypusField[141] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 196, 392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[140] := 6;
-NebentypusField[140] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[147] := 6;
-NebentypusField[147] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[138] := 6;
-NebentypusField[138] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[143] := 2;
-NebentypusField[143] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[144] := 6;
-NebentypusField[144] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[142] := 3;
-NebentypusField[142] := Polynomial([CyclotomicField(3) | [ RationalField() | -98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[133] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[133] := 3;
+NebentypusField[133] := Polynomial([CyclotomicField(3) | [ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[132] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[132] := 3;
+NebentypusField[132] := Polynomial([CyclotomicField(3) | [ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[137] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[137] := 6;
 NebentypusField[137] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[148] := 6;
-NebentypusField[148] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[138] := {* IntegerRing() | 1, 3 *};
+
+wt[140] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[140] := 3;
+NebentypusField[140] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[144] := {* IntegerRing() | 1, 3 *};
+
+wt[142] := {* IntegerRing() | 0, 4 *};
+
+wt[141] := {* IntegerRing() | 1, 3 *};
+
+wt[139] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[139] := 3;
 NebentypusField[139] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[145] := 6;
-NebentypusField[145] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[149] := 6;
-NebentypusField[149] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[151] := 6;
-NebentypusField[151] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -490, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[143] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[143] := 2;
+NebentypusField[143] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[147] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[147] := 3;
+NebentypusField[147] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[146] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[146] := 6;
 NebentypusField[146] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 10, 20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[152] := 3;
-NebentypusField[152] := Polynomial([CyclotomicField(3) | [ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[150] := 3;
-NebentypusField[150] := Polynomial([CyclotomicField(3) | [ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[153] := 6;
-NebentypusField[153] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[155] := 6;
-NebentypusField[155] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, -14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[158] := 6;
-NebentypusField[158] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[145] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[145] := 3;
+NebentypusField[145] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[149] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[149] := 6;
+NebentypusField[149] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[156] := 6;
-NebentypusField[156] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[157] := 6;
-NebentypusField[157] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[152] := {* IntegerRing() | 0, 4 *};
+
+wt[153] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[153] := 3;
+NebentypusField[153] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[148] := {* IntegerRing() | 0, 4 *};
+
+wt[155] := {* IntegerRing() | 1, 3 *};
+
+wt[151] := {* IntegerRing() | 0, 4 *};
+
+wt[150] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[150] := 3;
+NebentypusField[150] := Polynomial([CyclotomicField(3) | [ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[157] := {* IntegerRing() | 0, 4 *};
+
+wt[158] := {* IntegerRing() | 0, 4 *};
+
+wt[159] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[159] := 3;
 NebentypusField[159] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[160] := 6;
-NebentypusField[160] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[156] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[156] := 3;
+NebentypusField[156] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[160] := {* IntegerRing() | 1, 3 *};
+
+wt[161] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[161] := 6;
 NebentypusField[161] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -50, -100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[163] := 6;
-NebentypusField[163] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[165] := 6;
-NebentypusField[165] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[167] := 6;
-NebentypusField[167] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[163] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[163] := 3;
+NebentypusField[163] := Polynomial([CyclotomicField(3) | [ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[164] := {* IntegerRing() | 1, 3 *};
+
+wt[166] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[166] := 3;
 NebentypusField[166] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[164] := 6;
-NebentypusField[164] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[171] := 6;
-NebentypusField[171] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[168] := 3;
-NebentypusField[168] := Polynomial([CyclotomicField(3) | [ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[169] := 3;
-NebentypusField[169] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[174] := 3;
-NebentypusField[174] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[165] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[165] := 3;
+NebentypusField[165] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[170] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[170] := 6;
 NebentypusField[170] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[176] := 6;
-NebentypusField[176] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[168] := {* IntegerRing() | 0, 4 *};
+
+wt[169] := {* IntegerRing() | 0, 4 *};
+
+wt[167] := {* IntegerRing() | 1, 3 *};
+
+wt[172] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[172] := 3;
+NebentypusField[172] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[171] := {* IntegerRing() | 1, 3 *};
+
+wt[176] := {* IntegerRing() | 1, 3 *};
+
+wt[174] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[174] := 3;
+NebentypusField[174] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[173] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[173] := 3;
+NebentypusField[173] := Polynomial([CyclotomicField(3) | [ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[179] := {* IntegerRing() | 0, 4 *};
+
+wt[181] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[181] := 3;
+NebentypusField[181] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[177] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[177] := 6;
+NebentypusField[177] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[182] := 6;
-NebentypusField[182] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -1225, -2450 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[178] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[178] := 6;
 NebentypusField[178] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[172] := 3;
-NebentypusField[172] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[180] := 6;
-NebentypusField[180] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -70, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[173] := 3;
-NebentypusField[173] := Polynomial([CyclotomicField(3) | [ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[177] := 6;
-NebentypusField[177] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[180] := {* IntegerRing() | 0, 4 *};
+
+wt[182] := {* IntegerRing() | 1, 3 *};
+
+wt[183] := {* IntegerRing() | 1, 3 *};
+
+wt[187] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[187] := 3;
+NebentypusField[187] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[188] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[188] := 1;
 NebentypusField[188] := Polynomial(\[1, 1, 1]);
-orderofNebentypus[186] := 6;
-NebentypusField[186] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[181] := 3;
-NebentypusField[181] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[183] := 6;
-NebentypusField[183] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[179] := 6;
-NebentypusField[179] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[184] := 6;
-NebentypusField[184] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[185] := 3;
-NebentypusField[185] := Polynomial([CyclotomicField(3) | [ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[187] := 6;
-NebentypusField[187] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[184] := {* IntegerRing() | 1, 3 *};
+
+wt[185] := {* IntegerRing() | 0, 4 *};
+
+wt[186] := {* IntegerRing() | 0, 4 *};
+
+wt[189] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[189] := 3;
+NebentypusField[189] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[191] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[191] := 6;
 NebentypusField[191] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[189] := 6;
-NebentypusField[189] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[190] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[190] := 6;
 NebentypusField[190] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[192] := 3;
-NebentypusField[192] := Polynomial([CyclotomicField(3) | [ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[193] := 6;
-NebentypusField[193] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 490, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[194] := 3;
-NebentypusField[194] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[195] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[195] := 6;
 NebentypusField[195] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[196] := 6;
-NebentypusField[196] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2450, 4900 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[197] := 6;
-NebentypusField[197] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[206] := 6;
-NebentypusField[206] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[194] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[194] := 3;
+NebentypusField[194] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[192] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[192] := 3;
+NebentypusField[192] := Polynomial([CyclotomicField(3) | [ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[193] := {* IntegerRing() | 1, 3 *};
+
+wt[196] := {* IntegerRing() | 0, 4 *};
+
+wt[198] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[198] := 3;
 NebentypusField[198] := Polynomial([CyclotomicField(3) | [ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[200] := 6;
-NebentypusField[200] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -14, -28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[201] := 3;
-NebentypusField[201] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[203] := 6;
-NebentypusField[203] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[210] := 6;
-NebentypusField[210] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -14, -28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[205] := 6;
-NebentypusField[205] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[197] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[197] := 3;
+NebentypusField[197] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[200] := {* IntegerRing() | 1, 3 *};
+
+wt[202] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[202] := 6;
 NebentypusField[202] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[208] := 3;
-NebentypusField[208] := Polynomial([CyclotomicField(3) | [ RationalField() | -49, -98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[215] := 6;
-NebentypusField[215] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[201] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[201] := 3;
+NebentypusField[201] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[206] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[206] := 3;
+NebentypusField[206] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[203] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[203] := 6;
+NebentypusField[203] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
+
+wt[205] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[205] := 6;
+NebentypusField[205] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+];
+
+wt[208] := {* IntegerRing() | 0, 4 *};
+
+wt[215] := {* IntegerRing() | 0, 4 *};
+
+wt[209] := {* IntegerRing() | 0, 4 *};
+
+wt[213] := {* IntegerRing() | 1, 3 *};
+
+wt[212] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[212] := 3;
+NebentypusField[212] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[211] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[211] := 6;
 NebentypusField[211] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[220] := 3;
-NebentypusField[220] := Polynomial([CyclotomicField(3) | [ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[212] := 3;
-NebentypusField[212] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[213] := 6;
-NebentypusField[213] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2450, 4900 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[209] := 3;
-NebentypusField[209] := Polynomial([CyclotomicField(3) | [ RationalField() | -98, -196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[221] := 6;
-NebentypusField[221] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[214] := 6;
-NebentypusField[214] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[210] := {* IntegerRing() | 1, 3 *};
+
+wt[218] := {* IntegerRing() | 0, 4 *};
+
+wt[217] := {* IntegerRing() | 1, 3 *};
+
+wt[216] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[216] := 3;
 NebentypusField[216] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[218] := 3;
-NebentypusField[218] := Polynomial([CyclotomicField(3) | [ RationalField() | -70, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[219] := {* IntegerRing() | 0, 4 *};
+
+wt[214] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[214] := 3;
+NebentypusField[214] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[220] := {* IntegerRing() | 0, 4 *};
+
+wt[221] := {* IntegerRing() | 0, 4 *};
+
+wt[223] := {* IntegerRing() | 0, 4 *};
+
+wt[222] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[222] := 6;
 NebentypusField[222] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[217] := 6;
-NebentypusField[217] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -350, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[219] := 6;
-NebentypusField[219] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[223] := 3;
-NebentypusField[223] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[225] := 6;
-NebentypusField[225] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[230] := {* IntegerRing() | 1, 3 *};
+
+wt[226] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[226] := 3;
-NebentypusField[226] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[226] := Polynomial([CyclotomicField(3) | [ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[225] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[225] := 3;
+NebentypusField[225] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[224] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[224] := 3;
-NebentypusField[224] := Polynomial([CyclotomicField(3) | [ RationalField() | -5, -10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[231] := 6;
-NebentypusField[231] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -35, -70 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[230] := 6;
-NebentypusField[230] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, -7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[228] := 3;
-NebentypusField[228] := Polynomial([CyclotomicField(3) | [ RationalField() | 28, 56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[227] := 6;
-NebentypusField[227] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[233] := 6;
-NebentypusField[233] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[229] := 3;
-NebentypusField[229] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[232] := 6;
-NebentypusField[232] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[237] := 3;
-NebentypusField[237] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[239] := 3;
-NebentypusField[239] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[236] := 6;
-NebentypusField[236] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[238] := 3;
-NebentypusField[238] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[224] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 10 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[227] := {* IntegerRing() | 0, 4 *};
+
+wt[228] := {* IntegerRing() | 0, 4 *};
+
+wt[233] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[233] := 3;
+NebentypusField[233] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[231] := {* IntegerRing() | 1, 3 *};
+
+wt[236] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[236] := 3;
+NebentypusField[236] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[235] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[235] := 6;
 NebentypusField[235] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[243] := 6;
-NebentypusField[243] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[242] := 3;
-NebentypusField[242] := Polynomial([CyclotomicField(3) | [ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[240] := 6;
-NebentypusField[240] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[253] := 6;
-NebentypusField[253] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, -7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -245, -490 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[245] := 6;
-NebentypusField[245] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[246] := 6;
-NebentypusField[246] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4900, 9800 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[252] := 3;
-NebentypusField[252] := Polynomial([CyclotomicField(3) | [ RationalField() | -98, -196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[244] := 6;
-NebentypusField[244] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[232] := {* IntegerRing() | 0, 4 *};
+
+wt[229] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[229] := 3;
+NebentypusField[229] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[237] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[237] := 3;
+NebentypusField[237] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[238] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[238] := 3;
+NebentypusField[238] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[239] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[239] := 3;
+NebentypusField[239] := Polynomial([CyclotomicField(3) | [ RationalField() | -2, -4 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[240] := {* IntegerRing() | 0, 4 *};
+
+wt[244] := {* IntegerRing() | 0, 4 *};
+
+wt[242] := {* IntegerRing() | 0, 4 *};
+
+wt[243] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[243] := 3;
+NebentypusField[243] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[249] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[249] := 3;
 NebentypusField[249] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[248] := 6;
-NebentypusField[248] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, -14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[250] := 6;
-NebentypusField[250] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -14, -28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[247] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[247] := 3;
 NebentypusField[247] := Polynomial([CyclotomicField(3) | [ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[251] := 6;
-NebentypusField[251] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+
+wt[248] := {* IntegerRing() | 1, 3 *};
+
+wt[246] := {* IntegerRing() | 0, 4 *};
+
+wt[253] := {* IntegerRing() | 1, 3 *};
+
+wt[251] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[251] := 3;
+NebentypusField[251] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[245] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[245] := 6;
+NebentypusField[245] := [ PolynomialRing(CyclotomicField(3)) |
+[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
+[[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[255] := 3;
-NebentypusField[255] := Polynomial([CyclotomicField(3) | [ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[252] := {* IntegerRing() | 0, 4 *};
+
+wt[250] := {* IntegerRing() | 1, 3 *};
+
+wt[254] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[254] := 6;
 NebentypusField[254] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[256] := 6;
-NebentypusField[256] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[258] := 6;
-NebentypusField[258] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[264] := 6;
-NebentypusField[264] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, -350 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[257] := 6;
-NebentypusField[257] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4900, 9800 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[259] := 6;
-NebentypusField[259] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[262] := 3;
-NebentypusField[262] := Polynomial([CyclotomicField(3) | [ RationalField() | -2450, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[261] := 3;
-NebentypusField[261] := Polynomial([CyclotomicField(3) | [ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[263] := 6;
-NebentypusField[263] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -350, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[266] := 6;
-NebentypusField[266] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -1225, -2450 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[271] := 3;
-NebentypusField[271] := Polynomial([CyclotomicField(3) | [ RationalField() | -49, -98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[275] := 6;
-NebentypusField[275] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 245, 490 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[265] := 6;
-NebentypusField[265] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -70, -140 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[269] := 3;
-NebentypusField[269] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[267] := 6;
-NebentypusField[267] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[270] := 3;
-NebentypusField[270] := Polynomial([CyclotomicField(3) | [ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[255] := {* IntegerRing() | 0, 4 *};
+
+wt[256] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[256] := 3;
+NebentypusField[256] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[258] := {* IntegerRing() | 1, 3 *};
+
+wt[259] := {* IntegerRing() | 1, 3 *};
+
+wt[257] := {* IntegerRing() | 1, 3 *};
+
+wt[261] := {* IntegerRing() | 0, 4 *};
+
+wt[262] := {* IntegerRing() | 0, 4 *};
+
+wt[264] := {* IntegerRing() | 1, 3 *};
+
+wt[267] := {* IntegerRing() | 0, 4 *};
+
+wt[263] := {* IntegerRing() | 1, 3 *};
+
+wt[268] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[268] := 3;
 NebentypusField[268] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[272] := 6;
-NebentypusField[272] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2450, 4900 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[276] := 6;
-NebentypusField[276] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[277] := 3;
-NebentypusField[277] := Polynomial([CyclotomicField(3) | [ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[281] := 6;
-NebentypusField[281] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[273] := 3;
-NebentypusField[273] := Polynomial([CyclotomicField(3) | [ RationalField() | 14, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[274] := 6;
-NebentypusField[274] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, -350 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[271] := {* IntegerRing() | 0, 4 *};
+
+wt[266] := {* IntegerRing() | 0, 4 *};
+
+wt[265] := {* IntegerRing() | 1, 3 *};
+
+wt[269] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[269] := 3;
+NebentypusField[269] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[270] := {* IntegerRing() | 0, 4 *};
+
+wt[273] := {* IntegerRing() | 0, 4 *};
+
+wt[275] := {* IntegerRing() | 1, 3 *};
+
+wt[274] := {* IntegerRing() | 1, 3 *};
+
+wt[276] := {* IntegerRing() | 0, 4 *};
+
+wt[272] := {* IntegerRing() | 0, 4 *};
+
+wt[277] := {* IntegerRing() | 0, 4 *};
+
+wt[281] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[281] := 3;
+NebentypusField[281] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[278] := {* IntegerRing() | 0, 4 *};
+
+wt[283] := {* IntegerRing() | 1, 3 *};
+
+wt[279] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[279] := 3;
 NebentypusField[279] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[280] := 6;
-NebentypusField[280] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -350, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[284] := 6;
-NebentypusField[284] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[283] := 6;
-NebentypusField[283] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2450, 4900 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[278] := 3;
-NebentypusField[278] := Polynomial([CyclotomicField(3) | [ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[285] := 3;
-NebentypusField[285] := Polynomial([CyclotomicField(3) | [ RationalField() | -2450, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[286] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[286] := 6;
 NebentypusField[286] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[287] := 6;
-NebentypusField[287] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[285] := {* IntegerRing() | 0, 4 *};
+
+wt[280] := {* IntegerRing() | 0, 4 *};
+
+wt[287] := {* IntegerRing() | 1, 3 *};
+
+wt[284] := {* IntegerRing() | 1, 3 *};
+
+wt[291] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[291] := 3;
 NebentypusField[291] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[294] := 3;
-NebentypusField[294] := Polynomial([CyclotomicField(3) | [ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[292] := 6;
-NebentypusField[292] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 4900, 9800 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[289] := 6;
-NebentypusField[289] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -70, -140 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[295] := 6;
-NebentypusField[295] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[296] := 6;
-NebentypusField[296] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[297] := 6;
-NebentypusField[297] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -70, -140 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[299] := 6;
-NebentypusField[299] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[304] := 6;
-NebentypusField[304] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[298] := 3;
-NebentypusField[298] := Polynomial([CyclotomicField(3) | [ RationalField() | -1225, -2450 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[311] := 6;
-NebentypusField[311] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 175, 350 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[300] := 3;
-NebentypusField[300] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[303] := 6;
-NebentypusField[303] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 700, 1400 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[301] := 3;
-NebentypusField[301] := Polynomial([CyclotomicField(3) | [ RationalField() | -2450, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[289] := {* IntegerRing() | 0, 4 *};
+
+wt[292] := {* IntegerRing() | 0, 4 *};
+
+wt[294] := {* IntegerRing() | 0, 4 *};
+
+wt[295] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[295] := 3;
+NebentypusField[295] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[296] := {* IntegerRing() | 1, 3 *};
+
+wt[297] := {* IntegerRing() | 1, 3 *};
+
+wt[298] := {* IntegerRing() | 0, 4 *};
+
+wt[299] := {* IntegerRing() | 0, 4 *};
+
+wt[304] := {* IntegerRing() | 1, 3 *};
+
+wt[302] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[302] := 6;
 NebentypusField[302] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[312] := 3;
-NebentypusField[312] := Polynomial([CyclotomicField(3) | [ RationalField() | 98, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[306] := 6;
-NebentypusField[306] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[305] := 6;
-NebentypusField[305] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 140, 280 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[314] := 6;
-NebentypusField[314] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[300] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[300] := 3;
+NebentypusField[300] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[301] := {* IntegerRing() | 0, 4 *};
+
+wt[305] := {* IntegerRing() | 0, 4 *};
+
+wt[303] := {* IntegerRing() | 1, 3 *};
+
+wt[306] := {* IntegerRing() | 0, 4 *};
+
+wt[311] := {* IntegerRing() | 1, 3 *};
+
+wt[308] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[308] := 3;
-NebentypusField[308] := Polynomial([CyclotomicField(3) | [ RationalField() | 10, 20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[313] := 6;
-NebentypusField[313] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, -7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 98, 196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[309] := 6;
-NebentypusField[309] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 980, 1960 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+NebentypusField[308] := Polynomial([CyclotomicField(3) | [ RationalField() | -10, -20 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[309] := {* IntegerRing() | 0, 4 *};
+
+wt[313] := {* IntegerRing() | 1, 3 *};
+
+wt[312] := {* IntegerRing() | 0, 4 *};
+
+wt[314] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[314] := 3;
+NebentypusField[314] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[315] := {* IntegerRing() | 0, 4 *};
+
+wt[317] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[317] := 3;
 NebentypusField[317] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[315] := 6;
-NebentypusField[315] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 140, 280 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[318] := 3;
-NebentypusField[318] := Polynomial([CyclotomicField(3) | [ RationalField() | 28, 56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[319] := 6;
-NebentypusField[319] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -98, -196 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[323] := 6;
-NebentypusField[323] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[320] := 3;
-NebentypusField[320] := Polynomial([CyclotomicField(3) | [ RationalField() | -350, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[319] := {* IntegerRing() | 0, 4 *};
+
+wt[322] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[322] := 3;
 NebentypusField[322] := Polynomial([CyclotomicField(3) | [ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[325] := 6;
-NebentypusField[325] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -490, -980 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[327] := 3;
-NebentypusField[327] := Polynomial([CyclotomicField(3) | [ RationalField() | 4900, 9800 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[326] := 6;
-NebentypusField[326] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[328] := 6;
-NebentypusField[328] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 28, 56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[332] := 6;
-NebentypusField[332] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 14, 28 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[338] := 6;
-NebentypusField[338] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[335] := 6;
-NebentypusField[335] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[329] := 6;
-NebentypusField[329] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[337] := 3;
-NebentypusField[337] := Polynomial([CyclotomicField(3) | [ RationalField() | -490, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[331] := 3;
-NebentypusField[331] := Polynomial([CyclotomicField(3) | [ RationalField() | 35, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[343] := 3;
-NebentypusField[343] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[342] := 6;
-NebentypusField[342] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 980, 1960 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[336] := 6;
-NebentypusField[336] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[318] := {* IntegerRing() | 0, 4 *};
+
+wt[323] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[323] := 3;
+NebentypusField[323] := Polynomial([CyclotomicField(3) | [ RationalField() | 1, 2 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[320] := {* IntegerRing() | 0, 4 *};
+
+wt[327] := {* IntegerRing() | 0, 4 *};
+
+wt[325] := {* IntegerRing() | 0, 4 *};
+
+wt[328] := {* IntegerRing() | 0, 4 *};
+
+wt[326] := {* IntegerRing() | 1, 3 *};
+
+wt[329] := {* IntegerRing() | 1, 3 *};
+
+wt[335] := {* IntegerRing() | 0, 4 *};
+
+wt[332] := {* IntegerRing() | 1, 3 *};
+
+wt[333] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[333] := 3;
 NebentypusField[333] := Polynomial([CyclotomicField(3) | [ RationalField() | 5, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[339] := 6;
-NebentypusField[339] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 196, 392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[338] := {* IntegerRing() | 1, 3 *};
+
+wt[331] := {* IntegerRing() | 0, 4 *};
+
+wt[337] := {* IntegerRing() | 0, 4 *};
+
+wt[339] := {* IntegerRing() | 0, 4 *};
+
+wt[340] := {* IntegerRing() | 0, 4 *};
+
+wt[334] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[334] := 6;
 NebentypusField[334] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[341] := 6;
-NebentypusField[341] := [ PolynomialRing(CyclotomicField(3)) |
+
+wt[336] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[336] := 6;
+NebentypusField[336] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -350, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[344] := 6;
-NebentypusField[344] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -175, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[346] := 6;
-NebentypusField[346] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[345] := 6;
-NebentypusField[345] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -196, -392 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[340] := 3;
-NebentypusField[340] := Polynomial([CyclotomicField(3) | [ RationalField() | 35, 70 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[347] := 6;
-NebentypusField[347] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 140, 280 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[341] := {* IntegerRing() | 0, 4 *};
+
+wt[344] := {* IntegerRing() | 0, 4 *};
+
+wt[342] := {* IntegerRing() | 1, 3 *};
+
+wt[343] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[343] := 3;
+NebentypusField[343] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[346] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[346] := 3;
+NebentypusField[346] := Polynomial([CyclotomicField(3) | [ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[345] := {* IntegerRing() | 0, 4 *};
+
+wt[347] := {* IntegerRing() | 1, 3 *};
+
+wt[349] := {* IntegerRing() | 2^^2 *};
+orderofNebentypus[349] := 3;
+NebentypusField[349] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[350] := {* IntegerRing() | 0, 4 *};
+
+wt[348] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[348] := 6;
 NebentypusField[348] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 25, 50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
+[[ RationalField() | -25, -50 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[349] := 3;
-NebentypusField[349] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[351] := 6;
-NebentypusField[351] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 28, 56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[350] := 3;
-NebentypusField[350] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[354] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[354] := 3;
 NebentypusField[354] := Polynomial([CyclotomicField(3) | [ RationalField() | 2, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[359] := 6;
-NebentypusField[359] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[351] := {* IntegerRing() | 1, 3 *};
+
+wt[359] := {* IntegerRing() | 1, 3 *};
+
+wt[357] := {* IntegerRing() | 0, 4 *};
+
+wt[355] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[355] := 3;
 NebentypusField[355] := Polynomial([CyclotomicField(3) | [ RationalField() | -50, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[356] := 3;
-NebentypusField[356] := Polynomial([CyclotomicField(3) | [ RationalField() | 245, 490 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[357] := 3;
-NebentypusField[357] := Polynomial([CyclotomicField(3) | [ RationalField() | 7, 14 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[360] := 3;
-NebentypusField[360] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[361] := 6;
-NebentypusField[361] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -490, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[356] := {* IntegerRing() | 0, 4 *};
+
+wt[360] := {* IntegerRing() | 0, 4 *};
+
+wt[358] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[358] := 6;
 NebentypusField[358] := [ PolynomialRing(CyclotomicField(3)) |
 [[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
 [[ RationalField() | 50, 100 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
 ];
-orderofNebentypus[364] := 6;
-NebentypusField[364] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 49, 98 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[365] := 6;
-NebentypusField[365] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+
+wt[361] := {* IntegerRing() | 0, 4 *};
+
+wt[366] := {* IntegerRing() | 0, 4 *};
+
+wt[364] := {* IntegerRing() | 1, 3 *};
+
+wt[365] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[365] := 3;
+NebentypusField[365] := Polynomial([CyclotomicField(3) | [ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[369] := {* IntegerRing() | 0, 4 *};
+
+wt[368] := {* IntegerRing() | 0, 4 *};
+
+wt[370] := {* IntegerRing() | 5^^2 *};
 orderofNebentypus[370] := 2;
-NebentypusField[370] := Polynomial([CyclotomicField(3) | [ RationalField() | -7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[368] := 6;
-NebentypusField[368] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -245, -490 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[366] := 3;
-NebentypusField[366] := Polynomial([CyclotomicField(3) | [ RationalField() | -490, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[369] := 3;
-NebentypusField[369] := Polynomial([CyclotomicField(3) | [ RationalField() | 2450, 4900 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[374] := 3;
-NebentypusField[374] := Polynomial([CyclotomicField(3) | [ RationalField() | 70, 140 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[373] := 2;
-NebentypusField[373] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[375] := 6;
-NebentypusField[375] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | 20, 40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
-orderofNebentypus[377] := 6;
-NebentypusField[377] := [ PolynomialRing(CyclotomicField(3)) |
-[[ RationalField() | 0, 7 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]],
-[[ RationalField() | -28, -56 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]
-];
+NebentypusField[370] := Polynomial([CyclotomicField(3) | [ RationalField() | 0, 1 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[373] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[373] := 1;
+NebentypusField[373] := Polynomial(\[1, 1, 1]);
+
+wt[374] := {* IntegerRing() | 0, 4 *};
+
+wt[379] := {* IntegerRing() | 0, 4 *};
+
+wt[377] := {* IntegerRing() | 1, 3 *};
+
+wt[376] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[376] := 3;
-NebentypusField[376] := Polynomial([CyclotomicField(3) | [ RationalField() | 4, 8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[376] := Polynomial([CyclotomicField(3) | [ RationalField() | -4, -8 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[375] := {* IntegerRing() | 5^^2 *};
+orderofNebentypus[375] := 3;
+NebentypusField[375] := Polynomial([CyclotomicField(3) | [ RationalField() | -20, -40 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[378] := {* IntegerRing() | 2^^2 *};
 orderofNebentypus[378] := 3;
-NebentypusField[378] := Polynomial([CyclotomicField(3) | [ RationalField() | -100, -200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[379] := 3;
-NebentypusField[379] := Polynomial([CyclotomicField(3) | [ RationalField() | 7, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
-orderofNebentypus[381] := 3;
-NebentypusField[381] := Polynomial([CyclotomicField(3) | [ RationalField() | -175, -350 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+NebentypusField[378] := Polynomial([CyclotomicField(3) | [ RationalField() | 100, 200 ], [ RationalField() | 0, 0 ], [ RationalField() | 0, 0 ], [ RationalField() | 1, 0 ]]);
+
+wt[381] := {* IntegerRing() | 0, 4 *};
+

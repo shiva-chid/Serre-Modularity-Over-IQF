@@ -118,7 +118,7 @@ of the Jacobian of the curve y^3 = f(x) over K.}
             assert #possible_detpairs eq 4;
 
             X := [xx : xx in X | <&*[gens_evalsatpabove[1][i]^(xx[i]) : i in [1..n]], &*[gens_evalsatpabove[1][i]^(xx[n+i]) : i in [1..n]]> in possible_detpairs];
-            print p, #X;
+            // print p, #X;
         else
             possible_dets := [eigvals_rhoell_frobp[i] * eigvals_rhoell_frobp[j] : i in [1..#eigvals_rhoell_frobp], j in [1..#eigvals_rhoell_frobp] | i lt j];
 
@@ -133,7 +133,7 @@ of the Jacobian of the curve y^3 = f(x) over K.}
             assert #possible_dets eq 4;
 
             X := [x : x in X | &*[gens_evalsatpabove[1][i]^(x[i]) : i in [1..n]] in possible_dets];
-            print p, #X;
+            // print p, #X;
         end if;
 
         number_linearfacs := Minimum(number_linearfacs,&+([] cat [r[2] : r in roots_charpol | r[1] in GF(ell)]));
